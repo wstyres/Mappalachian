@@ -14,23 +14,19 @@ class MapViewController: UIViewController {
     @IBOutlet var cameraButton: UIImageView!
     @IBOutlet var mapView: MKMapView!
     
+    let booneRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.214121, longitude: -81.679117), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.008))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         cameraButtonContainer.layer.cornerRadius = 60 / 2
         cameraButton.image = UIImage(systemName: "camera.fill")
-        cameraButton.tintColor = .white
+        cameraButton.tintColor = .systemGroupedBackground
+        
+        // Configure mapView to zoom into ASU (at about 36.214121,-81.679117)
+        mapView.region = booneRegion
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 
 }
