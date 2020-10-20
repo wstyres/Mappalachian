@@ -1,4 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Building" representedClassName="Building" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="prefix" optional="YES" attributeType="String"/>
+        <relationship name="bounds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Polyline"/>
+        <relationship name="floors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Floor" inverseName="building" inverseEntity="Floor"/>
+    </entity>
+    <entity name="Class" representedClassName="Class" syncable="YES" codeGenerationType="class">
+        <attribute name="courseNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="instructor" optional="YES" attributeType="String"/>
+        <attribute name="numberOfStudents" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="classes" inverseEntity="Room"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="events" inverseEntity="Room"/>
+    </entity>
+    <entity name="Floor" representedClassName="Floor" syncable="YES" codeGenerationType="class">
+        <relationship name="building" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Building" inverseName="floors" inverseEntity="Building"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="floor" inverseEntity="Room"/>
+    </entity>
+    <entity name="Polyline" representedClassName="Polyline" syncable="YES" codeGenerationType="class">
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="long" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Room" representedClassName="Room" syncable="YES" codeGenerationType="class">
+        <attribute name="hasPrinter" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lab" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="numberOfSeats" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="classes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="room" inverseEntity="Class"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="room" inverseEntity="Event"/>
+        <relationship name="floor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Floor" inverseName="rooms" inverseEntity="Floor"/>
+    </entity>
+    <elements>
+        <element name="Building" positionX="-509.50390625" positionY="-6.1640625" width="128" height="118"/>
+        <element name="Floor" positionX="-271.890625" positionY="38.90234375" width="128" height="73"/>
+        <element name="Room" positionX="-36" positionY="9" width="128" height="148"/>
+        <element name="Class" positionX="136.06640625" positionY="-191.6171875" width="128" height="103"/>
+        <element name="Event" positionX="138.61328125" positionY="212.13671875" width="128" height="58"/>
+        <element name="Polyline" positionX="-144" positionY="72" width="128" height="73"/>
+    </elements>
 </model>
