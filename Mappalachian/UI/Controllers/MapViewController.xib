@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="Mappalachian" customModuleProvider="target">
             <connections>
+                <outlet property="buildingBlurView" destination="fXo-QV-yvi" id="bOX-l8-rww"/>
+                <outlet property="buildingLabel" destination="Stt-9s-QOg" id="Afb-tp-KSH"/>
                 <outlet property="cameraButton" destination="hBZ-9f-OQx" id="BZE-KV-TeI"/>
                 <outlet property="cameraButtonContainer" destination="1aL-rP-4xj" id="phh-50-Mvo"/>
                 <outlet property="mapView" destination="IOW-EO-BHx" id="9I0-go-stm"/>
@@ -41,18 +43,44 @@
                         <constraint firstAttribute="bottom" secondItem="hBZ-9f-OQx" secondAttribute="bottom" constant="10" id="p0z-lv-Ile"/>
                     </constraints>
                 </view>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXo-QV-yvi">
+                    <rect key="frame" x="20" y="802" width="306" height="60"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="h40-NL-bCw">
+                        <rect key="frame" x="0.0" y="0.0" width="306" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stt-9s-QOg">
+                                <rect key="frame" x="8" y="20" width="290" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Stt-9s-QOg" firstAttribute="trailing" secondItem="h40-NL-bCw" secondAttribute="trailingMargin" id="gj9-ub-Dlh"/>
+                            <constraint firstItem="Stt-9s-QOg" firstAttribute="top" secondItem="h40-NL-bCw" secondAttribute="top" constant="20" id="mHZ-wX-dbZ"/>
+                            <constraint firstItem="Stt-9s-QOg" firstAttribute="leading" secondItem="h40-NL-bCw" secondAttribute="leadingMargin" id="oYr-5m-1Rk"/>
+                            <constraint firstItem="Stt-9s-QOg" firstAttribute="centerY" secondItem="h40-NL-bCw" secondAttribute="centerY" id="t0I-ZY-wuU"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="systemChromeMaterialDark"/>
+                </visualEffectView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fXo-QV-yvi" firstAttribute="top" secondItem="1aL-rP-4xj" secondAttribute="top" id="4WR-q7-01o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1aL-rP-4xj" secondAttribute="trailing" constant="20" id="6B0-L6-pww"/>
                 <constraint firstItem="IOW-EO-BHx" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="6CK-f3-cjz"/>
                 <constraint firstItem="IOW-EO-BHx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AVB-7r-Jdz"/>
                 <constraint firstItem="1aL-rP-4xj" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="DS5-HW-9bO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IOW-EO-BHx" secondAttribute="trailing" id="O1A-SJ-heK"/>
+                <constraint firstItem="1aL-rP-4xj" firstAttribute="leading" secondItem="fXo-QV-yvi" secondAttribute="trailing" constant="8" symbolic="YES" id="d1Q-Pa-q1k"/>
+                <constraint firstItem="fXo-QV-yvi" firstAttribute="bottom" secondItem="1aL-rP-4xj" secondAttribute="bottom" id="lbk-bo-mCd"/>
+                <constraint firstItem="fXo-QV-yvi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="rAe-Zj-ZCh"/>
                 <constraint firstItem="IOW-EO-BHx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xUz-C9-pT5"/>
             </constraints>
-            <point key="canvasLocation" x="-348" y="91"/>
+            <point key="canvasLocation" x="-349.27536231884062" y="90.401785714285708"/>
         </view>
     </objects>
     <resources>
