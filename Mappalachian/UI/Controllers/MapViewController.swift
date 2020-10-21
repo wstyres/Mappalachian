@@ -16,7 +16,7 @@ class MapViewController: UIViewController {
     @IBOutlet var cameraButton: UIImageView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var buildingLabel: UILabel!
-    @IBOutlet var buildingBlurView: UIVisualEffectView!
+    @IBOutlet var buildingLabelContainer: UIView!
     
     let moc = AppDelegate.delegate().persistentContainer.viewContext
     var polyMap: [MKPolygon: Building] = [MKPolygon: Building]()
@@ -27,17 +27,20 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        buildingBlurView.layer.cornerRadius = buildingBlurView.frame.height / 4
-        buildingBlurView.layer.masksToBounds = true
+        buildingLabelContainer.layer.cornerRadius = buildingLabelContainer.frame.height / 4
         
         cameraButtonContainer.layer.cornerRadius = 60 / 2
         cameraButton.image = UIImage(systemName: "camera.fill")
-        cameraButton.tintColor = .systemGroupedBackground
+        cameraButton.tintColor = .systemYellow
         
         // Configure mapView to zoom into ASU (at about 36.214121,-81.679117)
         mapView.region = booneRegion
         mapView.delegate = self
         mapView.showsUserLocation = true
+        mapView.pointOfInterestFilter = MKPointOfInterestFilter.excludingAll
+        mapView.showsCompass = false
+        mapView.showsScale = false
+//        mapView.userTrackingMode = .followWithHeading
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
@@ -97,9 +100,25 @@ extension MapViewController: CLLocationManagerDelegate {
         }
         
         if let building = buildingForUserLocation(mostRecentLocation.coordinate) {
-            buildingLabel.text = "Current Location: \(building.name!)"
+            if buildingLabelContainer.isHidden {
+                buildingLabelContainer.isHidden = false
+                UIView.animate(withDuration: 0.5) {
+                    self.buildingLabelContainer.alpha = 1.0
+                }
+            }
+            UIView.transition(with: buildingLabel, duration: 0.5, options: .transitionCrossDissolve) {
+                self.buildingLabel.text = "\(building.name!)"
+            } completion: { (complete) in
+                
+            }
+
         } else {
-            buildingLabel.text = "You are outside"
+            UIView.animate(withDuration: 0.5) {
+                self.buildingLabelContainer.alpha = 0.0
+            } completion: { (complete) in
+                self.buildingLabelContainer.isHidden = true
+            }
+
         }
     }
 }

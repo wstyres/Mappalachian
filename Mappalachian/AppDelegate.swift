@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 
                 let dddh = NSEntityDescription.insertNewObject(forEntityName: "Building", into: moc) as! Building
-                dddh.name = "DD Doughtery Hall"
+                dddh.name = "D.D. Dougherty Hall"
                 dddh.prefix = "DDDH"
                 dddh.address = "224 Joyce Lawrence Lane"
                 
