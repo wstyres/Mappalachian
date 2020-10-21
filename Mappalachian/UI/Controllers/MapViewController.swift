@@ -40,6 +40,13 @@ class MapViewController: UIViewController {
         mapView.pointOfInterestFilter = MKPointOfInterestFilter.excludingAll
         mapView.showsCompass = false
         mapView.showsScale = false
+        mapView.tintColor = UIColor(dynamicProvider: { (traits) -> UIColor in
+            if traits.userInterfaceStyle == .light {
+                return UIColor.systemYellow
+            } else {
+                return UIColor.black
+            }
+        })
 //        mapView.userTrackingMode = .followWithHeading
         
         locationManager = CLLocationManager()
@@ -127,8 +134,20 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolygon {
             let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
-            renderer.fillColor = UIColor.systemYellow.withAlphaComponent(0.5)
-            renderer.strokeColor = UIColor.systemYellow
+            renderer.fillColor = UIColor(dynamicProvider: { (traits) -> UIColor in
+                if traits.userInterfaceStyle == .dark {
+                    return UIColor.systemYellow
+                } else {
+                    return UIColor.black
+                }
+            }).withAlphaComponent(0.5)
+            renderer.strokeColor = UIColor(dynamicProvider: { (traits) -> UIColor in
+                if traits.userInterfaceStyle == .dark {
+                    return UIColor.systemYellow
+                } else {
+                    return UIColor.black
+                }
+            })
             renderer.lineWidth = 2
             return renderer
         }
