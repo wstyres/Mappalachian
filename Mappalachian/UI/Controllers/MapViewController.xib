@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,16 +61,34 @@
                         <constraint firstItem="J2B-Ug-huQ" firstAttribute="top" secondItem="EEc-p4-bsL" secondAttribute="top" constant="10" id="vRJ-qk-nhm"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq4-54-DKr">
+                    <rect key="frame" x="62" y="817" width="48" height="30"/>
+                    <state key="normal" title="Floor 0"/>
+                    <connections>
+                        <action selector="selectTwo:" destination="-1" eventType="touchUpInside" id="QiA-DB-06c"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXg-YC-yeW">
+                    <rect key="frame" x="184" y="817" width="46" height="30"/>
+                    <state key="normal" title="Floor 1"/>
+                    <connections>
+                        <action selector="selectOne:" destination="-1" eventType="touchUpInside" id="c7s-ZL-2GK"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="dXg-YC-yeW" firstAttribute="centerX" secondItem="EEc-p4-bsL" secondAttribute="centerX" id="AsA-CD-HaF"/>
                 <constraint firstItem="1aL-rP-4xj" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="G6n-oT-szO"/>
                 <constraint firstItem="IOW-EO-BHx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Lhp-Xp-OIt"/>
                 <constraint firstItem="EEc-p4-bsL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="NgD-t5-Gaq"/>
+                <constraint firstItem="jq4-54-DKr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="62" id="V6q-Ju-ZQR"/>
                 <constraint firstItem="IOW-EO-BHx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Vnf-o5-qUh"/>
+                <constraint firstItem="dXg-YC-yeW" firstAttribute="centerY" secondItem="1aL-rP-4xj" secondAttribute="centerY" id="b38-Hn-QfL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EEc-p4-bsL" secondAttribute="trailing" constant="100" id="bUC-DM-4UM"/>
                 <constraint firstItem="IOW-EO-BHx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bk1-T7-m5d"/>
+                <constraint firstItem="jq4-54-DKr" firstAttribute="baseline" secondItem="dXg-YC-yeW" secondAttribute="baseline" id="cQl-Ni-gA4"/>
                 <constraint firstItem="EEc-p4-bsL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hcG-ca-jVG"/>
                 <constraint firstAttribute="bottom" secondItem="IOW-EO-BHx" secondAttribute="bottom" id="soP-pb-mBX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1aL-rP-4xj" secondAttribute="trailing" constant="20" id="tdO-eC-c5w"/>
