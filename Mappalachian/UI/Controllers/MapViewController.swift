@@ -23,8 +23,35 @@ extension FeatureStyle {
 
 extension Level: FeatureStyle {
     func configure(overlayRenderer: MKOverlayPathRenderer) {
-        overlayRenderer.strokeColor = UIColor.blue
+        overlayRenderer.strokeColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1.0)
+        overlayRenderer.fillColor = UIColor.white
         overlayRenderer.lineWidth = 2.0
+    }
+}
+
+extension Unit: FeatureStyle {
+    func configure(overlayRenderer: MKOverlayPathRenderer) {
+        if self.properties?.category == "office" {
+            overlayRenderer.fillColor = UIColor(red: 0.83, green: 0.98, blue: 0.84, alpha: 1.00)
+        } else if self.properties?.category == "elevator" {
+            overlayRenderer.fillColor = UIColor(red: 0.77, green: 0.87, blue: 0.96, alpha: 1.00)
+        } else if self.properties?.category == "storage" {
+            overlayRenderer.fillColor = UIColor(red: 0.96, green: 0.84, blue: 0.73, alpha: 1.00)
+        } else if self.properties?.category == "conferenceroom" {
+            overlayRenderer.fillColor = UIColor(red: 0.65, green: 0.85, blue: 0.97, alpha: 1.00)
+        } else if self.properties?.category == "privatelounge" {
+            overlayRenderer.fillColor = UIColor(red: 0.96, green: 0.90, blue: 0.39, alpha: 1.00)
+        } else if self.properties?.category == "mailroom" {
+            overlayRenderer.fillColor = UIColor(red: 1.00, green: 0.68, blue: 0.41, alpha: 1.00)
+        } else if self.properties?.category == "serverroom" {
+            overlayRenderer.fillColor = UIColor(red: 0.93, green: 0.82, blue: 0.88, alpha: 1.00)
+        } else if self.properties?.category == "laboratory" {
+            overlayRenderer.fillColor = UIColor(red: 0.76, green: 1.00, blue: 0.95, alpha: 1.00)
+        } else {
+            overlayRenderer.fillColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        }
+        overlayRenderer.strokeColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 190/255)
+        overlayRenderer.lineWidth = 1.3
     }
 }
 
@@ -50,6 +77,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         locationManager.requestWhenInUseAuthorization()
         
+        mapView.showsBuildings = false
         mapView.delegate = self
         
         let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath)
@@ -60,7 +88,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.setVisibleMapRect(venueOverlay.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: false)
         }
         
-        showFeaturesForFloor(1)
+        showFeaturesForFloor(2)
     }
     
     func showFeaturesForFloor(_ floor: Int) {
@@ -79,6 +107,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         if let levels = self.venue?.levelsByOrdinal[floor] {
             for level in levels {
                 self.currentLevelFeatures.append(level)
+                self.currentLevelFeatures += level.units
             }
         }
         
@@ -115,14 +144,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
         return renderer
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for touch in touches {
-//            let touchPoint = touch.location(in: mapView)
-//            let location = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-//            print ("[\(location.latitude), \(location.longitude)],")
-//        }
-//    }
     
     @IBAction func selectOne(_ sender: Any) {
         showFeaturesForFloor(1)

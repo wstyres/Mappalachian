@@ -55,12 +55,20 @@ class GeoJSONDecoder {
         // Decode all the features
         let venues = decodeFeatures(Venue.self, from: .venue, in: archive)
         let levels = decodeFeatures(Level.self, from: .level, in: archive)
+        let units = decodeFeatures(Unit.self, from: .unit, in: archive)
         
         if venues.count != 1 {
             print("More than one venue! This is illegal!")
         }
         let venue = venues[0]
         venue.levelsByOrdinal = Dictionary(grouping: levels, by: { $0.properties!.ordinal })
+        
+        let unitsByLevel = Dictionary(grouping: units, by: { $0.properties?.levelId })
+        for level in levels {
+            if let unitsInLevel = unitsByLevel[level.identifier] {
+                level.units = unitsInLevel
+            }
+        }
         
         return venue
     }

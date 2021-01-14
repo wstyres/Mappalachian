@@ -15,4 +15,6 @@ class Level: Feature<Level.Properties> {
         let outdoor: Bool
         let buildingIds: [String]?
     }
+    
+    var units: [Unit] = []
 }

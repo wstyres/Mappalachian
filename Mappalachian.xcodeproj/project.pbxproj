@@ -20,6 +20,8 @@
 		89403EAB253F80F0006A9B90 /* MappalachianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403EAA253F80F0006A9B90 /* MappalachianUITests.swift */; };
 		89403ED2253F8594006A9B90 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403ED0253F8594006A9B90 /* MapViewController.swift */; };
 		89403ED3253F8594006A9B90 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89403ED1253F8594006A9B90 /* MapViewController.xib */; };
+		89AA607C255463B4001F97D1 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA607B255463B4001F97D1 /* Unit.swift */; };
+		89AA6080255466DE001F97D1 /* unit.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 89AA607A2554639C001F97D1 /* unit.geojson */; };
 		89BBEE242549E83B004244EB /* address.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 890774B125437F6800326CBB /* address.geojson */; };
 		89BBEE282549E83D004244EB /* building.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 890774B22543803400326CBB /* building.geojson */; };
 		89BBEE2C2549E840004244EB /* footprint.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 890774B32543805800326CBB /* footprint.geojson */; };
@@ -69,6 +71,8 @@
 		89403EAC253F80F0006A9B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89403ED0253F8594006A9B90 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		89403ED1253F8594006A9B90 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		89AA607A2554639C001F97D1 /* unit.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = unit.geojson; sourceTree = "<group>"; };
+		89AA607B255463B4001F97D1 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				890774B32543805800326CBB /* footprint.geojson */,
 				890774B42543820E00326CBB /* level.geojson */,
 				890774B52543832200326CBB /* venue.geojson */,
+				89AA607A2554639C001F97D1 /* unit.geojson */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				890774B7254383FB00326CBB /* Feature.swift */,
 				890774BF2543840A00326CBB /* Level.swift */,
 				890774C42543841A00326CBB /* Venue.swift */,
+				89AA607B255463B4001F97D1 /* Unit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AA6080255466DE001F97D1 /* unit.geojson in Resources */,
 				89BBEE242549E83B004244EB /* address.geojson in Resources */,
 				89BBEE2C2549E840004244EB /* footprint.geojson in Resources */,
 				89BBEE282549E83D004244EB /* building.geojson in Resources */,
@@ -328,6 +335,7 @@
 				890774C02543840A00326CBB /* Level.swift in Sources */,
 				89403E90253F80EF006A9B90 /* Mappalachian.xcdatamodeld in Sources */,
 				890774CA254384A100326CBB /* GeoJSONDecoder.swift in Sources */,
+				89AA607C255463B4001F97D1 /* Unit.swift in Sources */,
 				89403E86253F80EF006A9B90 /* AppDelegate.swift in Sources */,
 				890774C52543841A00326CBB /* Venue.swift in Sources */,
 				890774B8254383FB00326CBB /* Feature.swift in Sources */,
