@@ -30,27 +30,35 @@ extension Level: FeatureStyle {
 }
 
 extension Unit: FeatureStyle {
+    private enum Category: String {
+        case elevator
+        case escalator
+        case stairs
+        case restroom
+        case restroomMale = "restroom.male"
+        case restroomFemale = "restroom.female"
+        case restroomUnisex = "restroom.unisex"
+        case room
+        case nonpublic
+    }
+    
     func configure(overlayRenderer: MKOverlayPathRenderer) {
-        if self.properties?.category == "office" {
-            overlayRenderer.fillColor = UIColor(red: 0.83, green: 0.98, blue: 0.84, alpha: 1.00)
-        } else if self.properties?.category == "elevator" {
-            overlayRenderer.fillColor = UIColor(red: 0.77, green: 0.87, blue: 0.96, alpha: 1.00)
-        } else if self.properties?.category == "storage" {
-            overlayRenderer.fillColor = UIColor(red: 0.96, green: 0.84, blue: 0.73, alpha: 1.00)
-        } else if self.properties?.category == "conferenceroom" {
-            overlayRenderer.fillColor = UIColor(red: 0.65, green: 0.85, blue: 0.97, alpha: 1.00)
-        } else if self.properties?.category == "privatelounge" {
-            overlayRenderer.fillColor = UIColor(red: 0.96, green: 0.90, blue: 0.39, alpha: 1.00)
-        } else if self.properties?.category == "mailroom" {
-            overlayRenderer.fillColor = UIColor(red: 1.00, green: 0.68, blue: 0.41, alpha: 1.00)
-        } else if self.properties?.category == "serverroom" {
-            overlayRenderer.fillColor = UIColor(red: 0.93, green: 0.82, blue: 0.88, alpha: 1.00)
-        } else if self.properties?.category == "laboratory" {
-            overlayRenderer.fillColor = UIColor(red: 0.76, green: 1.00, blue: 0.95, alpha: 1.00)
+        if let category = Category(rawValue: self.properties!.category) {
+            switch category {
+            case .elevator, .escalator, .stairs:
+                overlayRenderer.fillColor = UIColor(red: 0.80, green: 0.86, blue: 0.90, alpha: 1.00)
+            case .restroom, .restroomMale, .restroomFemale, .restroomUnisex:
+                overlayRenderer.fillColor = UIColor(red: 0.91, green: 0.86, blue: 0.93, alpha: 1.00)
+            case .room:
+                overlayRenderer.fillColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
+            case .nonpublic:
+                overlayRenderer.fillColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1.00)
+            }
         } else {
-            overlayRenderer.fillColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+            overlayRenderer.fillColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)
         }
-        overlayRenderer.strokeColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 190/255)
+
+        overlayRenderer.strokeColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.00)
         overlayRenderer.lineWidth = 1.3
     }
 }
