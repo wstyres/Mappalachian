@@ -31,6 +31,7 @@ extension Level: FeatureStyle {
 
 extension Unit: FeatureStyle {
     private enum Category: String {
+        case concrete
         case elevator
         case escalator
         case stairs
@@ -45,6 +46,8 @@ extension Unit: FeatureStyle {
     func configure(overlayRenderer: MKOverlayPathRenderer) {
         if let category = Category(rawValue: self.properties!.category) {
             switch category {
+            case .concrete:
+                overlayRenderer.fillColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.00)
             case .elevator, .escalator, .stairs:
                 overlayRenderer.fillColor = UIColor(red: 0.80, green: 0.86, blue: 0.90, alpha: 1.00)
             case .restroom, .restroomMale, .restroomFemale, .restroomUnisex:
