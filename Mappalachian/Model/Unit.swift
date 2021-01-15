@@ -10,6 +10,6 @@ import Foundation
 class Unit: Feature<Unit.Properties> {
     struct Properties: Codable {
         let category: String
-        let levelId: UUID
+        let levelId: String
     }
 }

@@ -1474,5 +1474,89 @@
         ]
       }
     },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "316D",
+      "properties": {
+        "accessibility": null,
+        "alt_name": null,
+        "category": "restroom.female",
+        "display_point": {
+          "coordinates": [-81.7050517, 36.2231394],
+          "type": "Point"
+        },
+        "level_id": "81e9fd76-b34a-45f6-a6dc-1f172f01e849",
+        "name": null,
+        "restriction": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+              [-81.6808517, 36.2143535],
+              [-81.6808357, 36.2143085],
+              [-81.6807905, 36.2143188],
+              [-81.6808064, 36.2143638]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "316E",
+      "properties": {
+        "accessibility": null,
+        "alt_name": null,
+        "category": "nonpublic",
+        "display_point": {
+          "coordinates": [-81.7050517, 36.2231394],
+          "type": "Point"
+        },
+        "level_id": "81e9fd76-b34a-45f6-a6dc-1f172f01e849",
+        "name": null,
+        "restriction": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+              [-81.6808064, 36.2143638],
+              [-81.6807905, 36.2143188],
+              [-81.6807801, 36.2143212],
+              [-81.6807959, 36.2143661]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "316C",
+      "properties": {
+        "accessibility": null,
+        "alt_name": null,
+        "category": "restroom.male",
+        "display_point": {
+          "coordinates": [-81.7050517, 36.2231394],
+          "type": "Point"
+        },
+        "level_id": "81e9fd76-b34a-45f6-a6dc-1f172f01e849",
+        "name": null,
+        "restriction": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+              [-81.6807959, 36.2143661],
+              [-81.6807801, 36.2143212],
+              [-81.6807565, 36.2143266],
+              [-81.6807719, 36.2143716],
+          ]
+        ]
+      }
+    },
   ]
 }
