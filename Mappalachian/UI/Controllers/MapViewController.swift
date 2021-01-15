@@ -78,6 +78,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         mapView.showsBuildings = false
+        mapView.pointOfInterestFilter = MKPointOfInterestFilter.excludingAll
         mapView.delegate = self
         
         let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath)
