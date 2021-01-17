@@ -1,0 +1,21 @@
+{
+    "features": [
+        {
+            "feature_type": "address",
+            "geometry": null,
+            "id": "dd-dougherty-hall-addr",
+            "properties": {
+                "address": "226 Joyce Lawrence Lane",
+                "country": "US",
+                "locality": "Boone",
+                "postal_code": "28608",
+                "postal_code_ext": null,
+                "province": "US-NC",
+                "unit": null
+            },
+            "type": "Feature"
+        }
+    ],
+    "name": "address",
+    "type": "FeatureCollection"
+}

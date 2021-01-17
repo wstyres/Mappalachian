@@ -1,0 +1,25 @@
+{
+    "features": [
+        {
+            "feature_type": "building",
+            "geometry": null,
+            "id": "dd-dougherty-hall",
+            "properties": {
+                "address_id": "dd-dougherty-hall-addr",
+                "alt_name": null,
+                "category": "unspecified",
+                "display_point": {
+                    "coordinates": [-81.680471, 36.214277],
+                    "type": "Point"
+                },
+                "name": {
+                    "en": "D.D. Dougherty Hall"
+                },
+                "restriction": null
+            },
+            "type": "Feature"
+        }
+    ],
+    "name": "building",
+    "type": "FeatureCollection"
+}

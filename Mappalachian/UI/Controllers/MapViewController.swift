@@ -100,6 +100,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         locationManager.requestWhenInUseAuthorization()
         
+        mapView.mapType = .satellite
         mapView.showsBuildings = false
         mapView.pointOfInterestFilter = MKPointOfInterestFilter.excludingAll
         mapView.delegate = self
