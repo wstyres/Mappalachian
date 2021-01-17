@@ -1,0 +1,37 @@
+{
+    "features": [
+        {
+            "feature_type": "footprint",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-81.6810131, 36.2149911],
+                        [-81.6810131, 36.2149911],
+                        [-81.6809539, 36.2148751],
+                        [-81.6809119, 36.2147572],
+                        [-81.6809278, 36.2147536],
+                        [-81.6808866, 36.2146381],
+                        [-81.680657, 36.2146914],
+                        [-81.6807, 36.214812],
+                        [-81.6806626, 36.2148207],
+                        [-81.6806782, 36.2148646],
+                        [-81.6807156, 36.2148559],
+                        [-81.6807828, 36.2150445]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "smith-wright-hall-footprint",
+            "properties": {
+                "building_ids": [
+                    "smith-wright-hall"
+                ],
+                "category": "ground",
+                "name": null
+            },
+            "type": "Feature"
+        }
+    ],
+    "name": "footprint",
+    "type": "FeatureCollection"
+}

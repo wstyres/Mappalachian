@@ -104,7 +104,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.pointOfInterestFilter = MKPointOfInterestFilter.excludingAll
         mapView.delegate = self
         
-        let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath)
+        let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath).appendingPathComponent("Data")
         let geoJSONDecoder = GeoJSONDecoder()
         venue = geoJSONDecoder.decode(dataDirectory)
         
@@ -127,9 +127,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         currentLevelAnnotations.removeAll()
         currentLevelOverlays.removeAll()
 
-        // Display the level's footprint, unit footprints, opening geometry, and occupant annotations
-        if let levels = self.venue?.levelsByOrdinal[floor] {
-            for level in levels {
+        // Display features for levels and units
+        for building in self.venue!.buildings {
+            for level in building.levels {
                 self.currentLevelFeatures.append(level)
                 self.currentLevelFeatures += level.units
             }
@@ -138,7 +138,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let currentLevelGeometry = self.currentLevelFeatures.flatMap({ $0.geometry })
         currentLevelOverlays = currentLevelGeometry.compactMap({ $0 as? MKOverlay })
 
-//        mapView.addOverlays(currentLevelOverlays, level: MKOverlayLevel(rawValue: 1))
         mapView.addOverlays(currentLevelOverlays)
         mapView.addAnnotations(currentLevelAnnotations)
     }

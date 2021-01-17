@@ -12,5 +12,5 @@ class Venue: Feature<Venue.Properties> {
         let category: String
     }
     
-    var levelsByOrdinal: [Int: [Level]] = [:]
+    var buildings: [Building] = []
 }

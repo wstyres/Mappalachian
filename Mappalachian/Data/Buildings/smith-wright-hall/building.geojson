@@ -1,0 +1,25 @@
+{
+    "features": [
+        {
+            "feature_type": "building",
+            "geometry": null,
+            "id": "smith-wright-hall",
+            "properties": {
+                "address_id": "smith-wright-hall-addr",
+                "alt_name": null,
+                "category": "unspecified",
+                "display_point": {
+                    "coordinates": [-81.680471, 36.214277],
+                    "type": "Point"
+                },
+                "name": {
+                    "en": "Smith Wright Hall"
+                },
+                "restriction": null
+            },
+            "type": "Feature"
+        }
+    ],
+    "name": "building",
+    "type": "FeatureCollection"
+}

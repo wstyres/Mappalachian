@@ -3,9 +3,9 @@
         {
             "feature_type": "address",
             "geometry": null,
-            "id": "anne-belk-hall-addr",
+            "id": "smith-wright-hall-addr",
             "properties": {
-                "address": "224 Joyce Lawrence Lane",
+                "address": "222 Joyce Lawrence Lane",
                 "country": "US",
                 "locality": "Boone",
                 "postal_code": "28608",
