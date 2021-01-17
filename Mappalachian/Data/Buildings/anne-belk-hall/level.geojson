@@ -32,11 +32,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "81e9fd76-b34a-45f6-a6dc-1f172f01e849",
+            "id": "anne-belk-hall-level-3",
             "properties": {
-                "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
+                "address_id": "anne-belk-hall-addr",
                 "building_ids": [
-                    "26f04b4f-9ae2-45e3-99d1-393c66d58eb4"
+                    "anne-belk-hall"
                 ],
                 "category": "unspecified",
                 "display_point": {

@@ -71,6 +71,7 @@
 		89403EAC253F80F0006A9B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89403ED0253F8594006A9B90 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		89403ED1253F8594006A9B90 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		899F519725B4DC1E007E6908 /* address.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = address.geojson; sourceTree = "<group>"; };
 		89AA607A2554639C001F97D1 /* unit.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = unit.geojson; sourceTree = "<group>"; };
 		89AA607B255463B4001F97D1 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				899F519225B4DB2D007E6908 /* Buildings */,
+				899F519725B4DC1E007E6908 /* address.geojson */,
 				890774B52543832200326CBB /* venue.geojson */,
 			);
 			path = Data;

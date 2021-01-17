@@ -3,12 +3,12 @@
         {
             "feature_type": "address",
             "geometry": null,
-            "id": "anne-belk-hall-addr",
+            "id": "venue-addr",
             "properties": {
-                "address": "224 Joyce Lawrence Lane",
+                "address": "287 Rivers St",
                 "country": "US",
                 "locality": "Boone",
-                "postal_code": "28607",
+                "postal_code": "28608",
                 "postal_code_ext": null,
                 "province": "US-NC",
                 "unit": null
