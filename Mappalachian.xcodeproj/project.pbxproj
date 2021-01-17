@@ -103,12 +103,8 @@
 		890774B025437F1B00326CBB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				890774B125437F6800326CBB /* address.geojson */,
-				890774B22543803400326CBB /* building.geojson */,
-				890774B32543805800326CBB /* footprint.geojson */,
-				890774B42543820E00326CBB /* level.geojson */,
+				899F519225B4DB2D007E6908 /* Buildings */,
 				890774B52543832200326CBB /* venue.geojson */,
-				89AA607A2554639C001F97D1 /* unit.geojson */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -194,6 +190,26 @@
 				89403ED1253F8594006A9B90 /* MapViewController.xib */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		899F519225B4DB2D007E6908 /* Buildings */ = {
+			isa = PBXGroup;
+			children = (
+				899F519325B4DB36007E6908 /* anne-belk-hall */,
+			);
+			path = Buildings;
+			sourceTree = "<group>";
+		};
+		899F519325B4DB36007E6908 /* anne-belk-hall */ = {
+			isa = PBXGroup;
+			children = (
+				890774B125437F6800326CBB /* address.geojson */,
+				890774B22543803400326CBB /* building.geojson */,
+				890774B32543805800326CBB /* footprint.geojson */,
+				890774B42543820E00326CBB /* level.geojson */,
+				89AA607A2554639C001F97D1 /* unit.geojson */,
+			);
+			path = "anne-belk-hall";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
