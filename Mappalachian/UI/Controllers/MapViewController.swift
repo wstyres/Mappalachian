@@ -82,17 +82,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var locationManager = CLLocationManager()
     
     var venue: Venue?
-    var levels: [Level] = []
-    var currentLevelFeatures = [FeatureStyle]()
-    var currentLevelOverlays = [MKOverlay]()
-    var currentLevelAnnotations = [MKAnnotation]()
+    var currentLevelFeatures = [String: [FeatureStyle]]()
+    var currentLevelOverlays = [String: [MKOverlay]]()
     
-    var mapView = MKMapView(frame: .zero)
-    
-//    let booneRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.214121, longitude: -81.679117), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.008))
+    var mapView: MKMapView!
     
     override func loadView() {
         super.loadView()
+        
+        self.view.backgroundColor = UIColor.systemBackground
+        
+        mapView = MKMapView(frame: .zero)
         
         self.view.addSubview(mapView)
         NSLayoutConstraint.activate([
@@ -119,41 +119,44 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         if let venue = venue, let venueOverlay = venue.geometry[0] as? MKOverlay {
             mapView.setVisibleMapRect(venueOverlay.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: false)
+            
+            for building in venue.buildings {
+                print("Rendering \(building.identifier)")
+                if let roof = building.levels.last {
+                    showFeaturesForLevel(building, roof)
+                }
+            }
         }
-        
-        showFeaturesForFloor(2)
     }
     
-    func showFeaturesForFloor(_ floor: Int) {
+    func showFeaturesForLevel(_ building: Building, _ level: Level) {
         guard venue != nil else {
             return
         }
-
-        // Clear out the previously-displayed level's geometry
-        currentLevelFeatures.removeAll()
-        mapView.removeOverlays(self.currentLevelOverlays)
-        mapView.removeAnnotations(self.currentLevelAnnotations)
-        currentLevelAnnotations.removeAll()
-        currentLevelOverlays.removeAll()
-
-        // Display features for levels and units
-        for building in self.venue!.buildings {
-            for level in building.levels {
-                self.currentLevelFeatures.append(level)
-                self.currentLevelFeatures += level.units
-            }
+        
+        if var features = currentLevelFeatures[building.identifier] {
+            features.removeAll()
+        } else {
+            currentLevelFeatures[building.identifier] = [FeatureStyle]()
         }
         
-        let currentLevelGeometry = self.currentLevelFeatures.flatMap({ $0.geometry })
-        currentLevelOverlays = currentLevelGeometry.compactMap({ $0 as? MKOverlay })
+        if var overlays = currentLevelOverlays[building.identifier] {
+            mapView.removeOverlays(overlays)
+            overlays.removeAll()
+        }
 
-        mapView.addOverlays(currentLevelOverlays)
-        mapView.addAnnotations(currentLevelAnnotations)
+        currentLevelFeatures[building.identifier]?.append(level)
+        currentLevelFeatures[building.identifier]? += level.units
+        
+        if let currentLevelGeometry = currentLevelFeatures[building.identifier]?.flatMap({ $0.geometry }) {
+            currentLevelOverlays[building.identifier] = currentLevelGeometry.compactMap({ $0 as? MKOverlay })
+            mapView.addOverlays(currentLevelOverlays[building.identifier]!)
+        }
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         guard let shape = overlay as? (MKShape & MKGeoJSONObject),
-            let feature = currentLevelFeatures.first( where: { $0.geometry.contains( where: { $0 == shape }) }) else {
+              let feature = currentLevelFeatures.values.flatMap( {$0} ).first(where: { $0.geometry.contains(where: {$0 == shape}) }) else {
             return MKOverlayRenderer(overlay: overlay)
         }
         
@@ -175,13 +178,5 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         feature.configure(overlayRenderer: renderer)
 
         return renderer
-    }
-    
-    @IBAction func selectOne(_ sender: Any) {
-        showFeaturesForFloor(1)
-    }
-    
-    @IBAction func selectTwo(_ sender: Any) {
-        showFeaturesForFloor(0)
     }
 }
