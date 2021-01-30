@@ -87,20 +87,28 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var currentLevelOverlays = [MKOverlay]()
     var currentLevelAnnotations = [MKAnnotation]()
     
-    @IBOutlet var cameraButtonContainer: UIView!
-    @IBOutlet var cameraButton: UIImageView!
-    @IBOutlet var mapView: MKMapView!
-    @IBOutlet var buildingLabel: UILabel!
-    @IBOutlet var buildingLabelContainer: UIView!
+    var mapView = MKMapView(frame: .zero)
     
 //    let booneRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.214121, longitude: -81.679117), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.008))
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.view.addSubview(mapView)
+        NSLayoutConstraint.activate([
+            mapView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            mapView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            mapView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor),
+            mapView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor)
+        ])
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.requestWhenInUseAuthorization()
         
-        mapView.mapType = .satellite
         mapView.showsBuildings = false
         mapView.pointOfInterestFilter = MKPointOfInterestFilter.excludingAll
         mapView.delegate = self
