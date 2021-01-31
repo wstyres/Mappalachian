@@ -10,6 +10,7 @@ import Foundation
 class Venue: Feature<Venue.Properties> {
     struct Properties: Codable {
         let category: String
+        let name: String
     }
     
     var buildings: [Building] = []

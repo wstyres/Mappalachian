@@ -23,9 +23,7 @@
                     "type": "Point"
                 },
                 "hours": "Su-Sa 09:00-17:00",
-                "name": {
-                    "en": "Appalachian State University"
-                },
+                "name": "Appalachian State University",
                 "phone": null,
                 "restriction": null,
                 "website": "https://appstate.edu"

@@ -131,6 +131,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 }
             }
         }
+        
+        self.navigationItem.title = venue?.properties?.name ?? "Unknown"
     }
     
     func showFeaturesForLevel(_ building: Building, _ level: Level) {
@@ -177,8 +179,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             default:
                 return MKOverlayRenderer(overlay: overlay)
         }
-
-        // Configure the overlay renderer's display properties in feature-specific ways.
+        
         feature.configure(overlayRenderer: renderer)
 
         return renderer

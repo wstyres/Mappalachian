@@ -12,9 +12,7 @@
                     "coordinates": [-81.680471, 36.214277],
                     "type": "Point"
                 },
-                "name": {
-                    "en": "Smith Wright Hall"
-                },
+                "name": "Smith Wright Hall",
                 "restriction": null
             },
             "type": "Feature"

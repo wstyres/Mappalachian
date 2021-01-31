@@ -12,9 +12,7 @@
                     "coordinates": [-81.680471, 36.214277],
                     "type": "Point"
                 },
-                "name": {
-                    "en": "Anne Belk Hall"
-                },
+                "name": "Anne Belk Hall",
                 "restriction": null
             },
             "type": "Feature"

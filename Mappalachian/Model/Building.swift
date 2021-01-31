@@ -10,6 +10,7 @@ import UIKit
 class Building: Feature<Building.Properties> {
     struct Properties: Codable {
         let category: String
+        let name: String
     }
     
     var levels: [Level] = []
