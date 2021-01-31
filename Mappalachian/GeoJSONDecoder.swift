@@ -12,56 +12,24 @@ protocol GeoJSONDecodableFeature {
     init(feature: MKGeoJSONFeature) throws
 }
 
-private struct GeoJSONArchive {
-    let baseDirectory: URL
-    init(directory: URL) {
-        baseDirectory = directory
-    }
-    
-    enum File {
-        case address
-        case amenity
-        case anchor
-        case building
-        case detail
-        case fixture
-        case footprint
-        case geofence
-        case kiosk
-        case level
-        case manifest
-        case occupant
-        case opening
-        case relationship
-        case section
-        case unit
-        case venue
-        
-        var filename: String {
-            return "\(self).geojson"
-        }
-    }
-    
-    func fileURL(for file: File) -> URL {
-        return baseDirectory.appendingPathComponent(file.filename)
-    }
-}
-
 class GeoJSONDecoder {
     private let geoJSONDecoder = MKGeoJSONDecoder()
+    
     func decode(_ dataDirectory: URL) -> Venue? {
-        let archive = GeoJSONArchive(directory: dataDirectory)
-        
         // Decode all the features
-        if let venue = decodeFeatures(Venue.self, from: .venue, in: archive).first {
+        if let venue = decodeFeatures(Venue.self, in: dataDirectory).first {
             do {
                 let buildingPaths = try FileManager.default.contentsOfDirectory(at: dataDirectory.appendingPathComponent("Buildings"), includingPropertiesForKeys: nil, options: [.skipsHiddenFiles]).filter(\.hasDirectoryPath)
                 for buildingPath in buildingPaths {
-                    let buildingArchive = GeoJSONArchive(directory: buildingPath)
-                    if let building = decodeFeatures(Building.self, from: .building, in: buildingArchive).first {
-                        building.levels = decodeFeatures(Level.self, from: .level, in: buildingArchive)
+                    if let building = decodeFeatures(Building.self, in: buildingPath).first {
+                        building.levels = decodeFeatures(Level.self, in: buildingPath)
+                        let levelsDirectory = buildingPath.appendingPathComponent("Levels")
                         for level in building.levels {
-                            level.units = decodeFeatures(Unit.self, from: .unit, in: buildingArchive)
+                            let filename = level.identifier.replacingOccurrences(of: building.identifier.appending("-"), with: "").appending(".geojson")
+                            let levelPath = levelsDirectory.appendingPathComponent(filename)
+                            if FileManager.default.fileExists(atPath: levelPath.path) {
+                                level.units = decodeFeatures(Unit.self, at: levelPath)
+                            }
                         }
                         venue.buildings.append(building)
                     }
@@ -75,15 +43,18 @@ class GeoJSONDecoder {
         return nil
     }
     
-    private func decodeFeatures<T: GeoJSONDecodableFeature>(_ type: T.Type, from file: GeoJSONArchive.File, in archive: GeoJSONArchive) -> [T] {
-        let fileURL = archive.fileURL(for: file)
+    private func decodeFeatures<T: GeoJSONDecodableFeature>(_ type: T.Type, in directory: URL) -> [T] {
+        return decodeFeatures(type, at: directory.appendingPathComponent("\(type).geojson".lowercased()))
+    }
+    
+    private func decodeFeatures<T: GeoJSONDecodableFeature>(_ type: T.Type, at path: URL) -> [T] {
         do {
-            let data = try Data(contentsOf: fileURL)
+            let data = try Data(contentsOf: path)
             let geoJSONFeatures = try geoJSONDecoder.decode(data)
-            let features = geoJSONFeatures as! [MKGeoJSONFeature]
+            let MKFeatures = geoJSONFeatures as! [MKGeoJSONFeature]
             
-            let imdfFeatures = try features.map { try type.init(feature: $0) }
-            return imdfFeatures
+            let features = try MKFeatures.map { try type.init(feature: $0) }
+            return features
         } catch let error {
             print("An error occurred while decoding features: \(error.localizedDescription)")
             return []
