@@ -33,3 +33,14 @@ class Feature<Properties: Decodable>: NSObject, GeoJSONDecodableFeature {
         super.init()
     }
 }
+
+protocol FeatureStyle {
+    var geometry: [MKShape & MKGeoJSONObject] { get }
+    func configure(overlayRenderer: MKOverlayPathRenderer)
+    func configure(annotationView: MKAnnotationView)
+}
+
+extension FeatureStyle {
+    func configure(overlayRenderer: MKOverlayPathRenderer) {}
+    func configure(annotationView: MKAnnotationView) {}
+}
