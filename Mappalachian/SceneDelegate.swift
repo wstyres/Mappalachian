@@ -19,6 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let mapController = UINavigationController(rootViewController: MapViewController())
         mapController.tabBarItem.title = "Map"
+        mapController.tabBarItem.image = UIImage(systemName: "map")
+        mapController.tabBarItem.selectedImage = UIImage(systemName: "map.fill")
         
         let tabController = UITabBarController()
         tabController.viewControllers = [mapController]
