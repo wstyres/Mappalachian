@@ -100,7 +100,7 @@
                     "en": "Roof"
                 },
                 "ordinal": 3,
-                "outdoor": false,
+                "outdoor": true,
                 "restriction": null,
                 "short_name": "R"
             },
