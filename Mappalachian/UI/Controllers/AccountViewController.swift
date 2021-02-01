@@ -18,6 +18,7 @@ class AccountViewController: UITableViewController {
     }
     
     override func loadView() {
+        super.loadView()
         self.title = "You"
     }
     
