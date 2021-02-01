@@ -14,6 +14,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var locationManager = CLLocationManager()
     
     var venue: Venue?
+    var currentLevelOrdinal: Int?
     var currentLevelFeatures = [String: [FeatureStyle]]()
     var currentLevelOverlays = [String: [MKOverlay]]()
     
@@ -68,6 +69,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             return
         }
         
+        currentLevelOrdinal = Int(level.properties?.ordinal ?? 0)
+        
         if var features = currentLevelFeatures[building.identifier] {
             features.removeAll()
         } else {
@@ -109,7 +112,26 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         feature.configure(overlayRenderer: renderer)
-
+        
         return renderer
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        // At a distance of 450, show the units in the levels
+        if mapView.camera.centerCoordinateDistance <= 450 {
+            let centerPoint = MKMapPoint(mapView.centerCoordinate)
+            for overlay in mapView.overlays {
+                if let polygon = overlay as? MKPolygon {
+                    guard let renderer = mapView.renderer(for: polygon) as? MKPolygonRenderer else { continue }
+                    let point = renderer.point(for: centerPoint)
+                    if renderer.path.contains(point) {
+                        let feature = currentLevelFeatures.values.flatMap( {$0} ).first(where: { $0.geometry.contains(where: {$0 == polygon}) })
+                        print("\(feature)")
+                        break
+                    }
+                    continue
+                }
+            }
+        }
     }
 }
