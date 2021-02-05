@@ -18,7 +18,9 @@
 		89403EA0253F80F0006A9B90 /* MappalachianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403E9F253F80F0006A9B90 /* MappalachianTests.swift */; };
 		89403EAB253F80F0006A9B90 /* MappalachianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403EAA253F80F0006A9B90 /* MappalachianUITests.swift */; };
 		89403ED2253F8594006A9B90 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403ED0253F8594006A9B90 /* MapViewController.swift */; };
-		8962D55725C7B1D400C4CB8F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962D55625C7B1D400C4CB8F /* AccountViewController.swift */; };
+		8962D55725C7B1D400C4CB8F /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962D55625C7B1D400C4CB8F /* ScheduleViewController.swift */; };
+		8962D55C25C8CC1600C4CB8F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962D55B25C8CC1600C4CB8F /* LogInViewController.swift */; };
+		8962D56825C8D43800C4CB8F /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962D56725C8D43800C4CB8F /* TextInputTableViewCell.swift */; };
 		899F51C425B4E141007E6908 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 899F51C325B4E141007E6908 /* Data */; };
 		899F51C925B4E310007E6908 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F51C825B4E310007E6908 /* Building.swift */; };
 		89AA607C255463B4001F97D1 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA607B255463B4001F97D1 /* Unit.swift */; };
@@ -59,7 +61,9 @@
 		89403EAA253F80F0006A9B90 /* MappalachianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappalachianUITests.swift; sourceTree = "<group>"; };
 		89403EAC253F80F0006A9B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89403ED0253F8594006A9B90 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		8962D55625C7B1D400C4CB8F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		8962D55625C7B1D400C4CB8F /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		8962D55B25C8CC1600C4CB8F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		8962D56725C8D43800C4CB8F /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
 		899F51C325B4E141007E6908 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		899F51C825B4E310007E6908 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		89AA607B255463B4001F97D1 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		89403EC8253F81AC006A9B90 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8962D56625C8D42100C4CB8F /* Views */,
 				89403EC9253F81B1006A9B90 /* Controllers */,
 			);
 			path = UI;
@@ -167,10 +172,19 @@
 		89403EC9253F81B1006A9B90 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8962D55625C7B1D400C4CB8F /* ScheduleViewController.swift */,
+				8962D55B25C8CC1600C4CB8F /* LogInViewController.swift */,
 				89403ED0253F8594006A9B90 /* MapViewController.swift */,
-				8962D55625C7B1D400C4CB8F /* AccountViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8962D56625C8D42100C4CB8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8962D56725C8D43800C4CB8F /* TextInputTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,11 +319,13 @@
 			files = (
 				890774C02543840A00326CBB /* Level.swift in Sources */,
 				890774CA254384A100326CBB /* GeoJSONDecoder.swift in Sources */,
+				8962D55C25C8CC1600C4CB8F /* LogInViewController.swift in Sources */,
 				89AA607C255463B4001F97D1 /* Unit.swift in Sources */,
 				89403E86253F80EF006A9B90 /* AppDelegate.swift in Sources */,
 				890774C52543841A00326CBB /* Venue.swift in Sources */,
 				890774B8254383FB00326CBB /* Feature.swift in Sources */,
-				8962D55725C7B1D400C4CB8F /* AccountViewController.swift in Sources */,
+				8962D56825C8D43800C4CB8F /* TextInputTableViewCell.swift in Sources */,
+				8962D55725C7B1D400C4CB8F /* ScheduleViewController.swift in Sources */,
 				899F51C925B4E310007E6908 /* Building.swift in Sources */,
 				89403E88253F80EF006A9B90 /* SceneDelegate.swift in Sources */,
 				89403ED2253F8594006A9B90 /* MapViewController.swift in Sources */,

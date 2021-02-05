@@ -22,13 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mapController.tabBarItem.image = UIImage(systemName: "map")
         mapController.tabBarItem.selectedImage = UIImage(systemName: "map.fill")
         
-        let youController = UINavigationController(rootViewController: AccountViewController())
-        youController.tabBarItem.title = "You"
-        youController.tabBarItem.image = UIImage(systemName: "person")
-        youController.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
+        let scheduleController = UINavigationController(rootViewController: true ? LogInViewController() : ScheduleViewController())
+        scheduleController.tabBarItem.title = "Schedule"
+        scheduleController.tabBarItem.image = UIImage(systemName: "calendar")
         
         let tabController = UITabBarController()
-        tabController.viewControllers = [mapController, youController]
+        tabController.viewControllers = [mapController, scheduleController]
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
