@@ -80,7 +80,11 @@ class LogInViewController: UITableViewController {
             let usernameCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! TextInputTableViewCell
             let passwordCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextInputTableViewCell
             
-//            authenticateWithBanner(username: usernameCell.textField.text, password: passwordCell.textField.text)
+            if let username = usernameCell.textField.text, !username.isEmpty, let password = passwordCell.textField.text, !password.isEmpty {
+                UserManager.sharedInstance.login(username: username, password: password) {
+                    print("Done I Guess")
+                }
+            }
         }
     }
 

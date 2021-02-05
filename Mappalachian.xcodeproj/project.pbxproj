@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8903F66125CDE92400027705 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903F66025CDE92400027705 /* UserManager.swift */; };
 		890774B8254383FB00326CBB /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890774B7254383FB00326CBB /* Feature.swift */; };
 		890774C02543840A00326CBB /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890774BF2543840A00326CBB /* Level.swift */; };
 		890774C52543841A00326CBB /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890774C42543841A00326CBB /* Venue.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8903F66025CDE92400027705 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		890774B7254383FB00326CBB /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		890774BF2543840A00326CBB /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		890774C42543841A00326CBB /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8903F65F25CDE8DA00027705 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8903F66025CDE92400027705 /* UserManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		890774B6254383D400326CBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 				89403E87253F80EF006A9B90 /* SceneDelegate.swift */,
 				890774C9254384A100326CBB /* GeoJSONDecoder.swift */,
 				899F51C325B4E141007E6908 /* Data */,
+				8903F65F25CDE8DA00027705 /* Managers */,
 				890774B6254383D400326CBB /* Model */,
 				89403EC8253F81AC006A9B90 /* UI */,
 				89403E91253F80F0006A9B90 /* Assets.xcassets */,
@@ -320,6 +331,7 @@
 				890774C02543840A00326CBB /* Level.swift in Sources */,
 				890774CA254384A100326CBB /* GeoJSONDecoder.swift in Sources */,
 				8962D55C25C8CC1600C4CB8F /* LogInViewController.swift in Sources */,
+				8903F66125CDE92400027705 /* UserManager.swift in Sources */,
 				89AA607C255463B4001F97D1 /* Unit.swift in Sources */,
 				89403E86253F80EF006A9B90 /* AppDelegate.swift in Sources */,
 				890774C52543841A00326CBB /* Venue.swift in Sources */,
