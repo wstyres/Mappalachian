@@ -7,38 +7,70 @@
 
 import Foundation
 
-class UserManager: NSObject, URLSessionDelegate {
+struct BannerCredentials {
+    var username: String
+    var password: String
+}
+
+enum BannerError: Error {
+    case incorrectLogin
+}
+
+enum KeychainError: Error {
+    case noPassword
+    case unexpectedPasswordData
+    case unhandledError(status: OSStatus)
+}
+
+class UserManager {
     
-    var authenticationSession: URLSession?
-    var protectionSpace: URLProtectionSpace?
+    static let server = "banmobprod.appstate.edu"
     
-    static let sharedInstance: UserManager = {
+    static let shared: UserManager = {
         return UserManager()
     }()
     
-    override init() {
-        super.init()
+    func retrieveLoginInformation() {
         
-        authenticationSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
-        protectionSpace = URLProtectionSpace(host: "banmobprod.appstate.edu", port: 8443, protocol: "https", realm: nil, authenticationMethod: NSURLAuthenticationMethodHTTPBasic)
     }
     
-    func obtainUserCredentials() -> URLCredential? {
-        if let space = protectionSpace {
-            return URLCredentialStorage.shared.defaultCredential(for: space)
+    func storeLoginInformation(_ credentials: BannerCredentials) throws {
+        let account = credentials.username
+        let password = credentials.password.data(using: String.Encoding.utf8)!
+        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
+                                    kSecAttrAccount as String: account,
+                                    kSecAttrServer as String: UserManager.server,
+                                    kSecValueData as String: password]
+        
+        let status = SecItemAdd(query as CFDictionary, nil)
+        guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
+    }
+    
+    func login(_ credentials: BannerCredentials, completion: () -> Void) {
+        do {
+            try storeLoginInformation(credentials)
+        } catch {
+            fatalError("oh no!")
         }
-        return nil
-    }
-    
-    func login(username: String, password: String, completion: () -> Void) {
+        
+        let loginData = String(format: "%@:%@", credentials.username, credentials.password).data(using: .utf8)!
+        let base64LoginData = loginData.base64EncodedString()
+
         if let authenticationURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/security/getUserInfo") {
-            let request = URLRequest(url: authenticationURL)
-            let task = authenticationSession?.dataTask(with: request)
-            task?.resume()
+            var request = URLRequest(url: authenticationURL)
+            request.httpMethod = "GET"
+            request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+            
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                do {
+                    let string = String(data: data!, encoding: .utf8)
+                    print("finished! \(string)")
+                } catch {
+                    print("oh no!")
+                }
+            })
+            task.resume()
         }
     }
     
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        print("Received authentication challenge \(challenge)")
-    }
 }
