@@ -24,31 +24,60 @@ enum KeychainError: Error {
 
 class UserManager {
     
-    static let server = "banmobprod.appstate.edu"
-    
     static let shared: UserManager = {
         return UserManager()
     }()
     
-    func retrieveLoginInformation() {
+    let server = "banmobprod.appstate.edu"
+    
+    func deleteLoginInformation() throws {
+        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
+                                    kSecAttrServer as String: server]
+        let status = SecItemDelete(query as CFDictionary)
+        guard status == errSecSuccess || status == errSecItemNotFound else { throw KeychainError.unhandledError(status: status) }
+    }
+    
+    func retrieveLoginInformation() throws -> BannerCredentials {
+        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
+                                    kSecAttrServer as String: server,
+                                    kSecMatchLimit as String: kSecMatchLimitOne,
+                                    kSecReturnAttributes as String: true,
+                                    kSecReturnData as String: true]
+        var item: CFTypeRef?
+        let status = SecItemCopyMatching(query as CFDictionary, &item)
+        guard status != errSecItemNotFound else { throw KeychainError.noPassword }
+        guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
         
+        guard let existingItem = item as? [String : Any],
+            let passwordData = existingItem[kSecValueData as String] as? Data,
+            let password = String(data: passwordData, encoding: String.Encoding.utf8),
+            let username = existingItem[kSecAttrAccount as String] as? String
+        else {
+            throw KeychainError.unexpectedPasswordData
+        }
+        return BannerCredentials(username: username, password: password)
     }
     
     func storeLoginInformation(_ credentials: BannerCredentials) throws {
-        let account = credentials.username
-        let password = credentials.password.data(using: String.Encoding.utf8)!
-        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
-                                    kSecAttrAccount as String: account,
-                                    kSecAttrServer as String: UserManager.server,
-                                    kSecValueData as String: password]
-        
-        let status = SecItemAdd(query as CFDictionary, nil)
-        guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
+        do {
+            try deleteLoginInformation() // Delete old login information before storing new one
+            let username = credentials.username
+            let password = credentials.password.data(using: String.Encoding.utf8)!
+            let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
+                                        kSecAttrAccount as String: username,
+                                        kSecAttrServer as String: server,
+                                        kSecValueData as String: password]
+            
+            let status = SecItemAdd(query as CFDictionary, nil)
+            guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
+        }
     }
     
     func login(_ credentials: BannerCredentials, completion: () -> Void) {
         do {
-            try storeLoginInformation(credentials)
+//            try storeLoginInformation(credentials)
+            let credentials = try retrieveLoginInformation()
+            print("got credentials: \(credentials.username) \(credentials.password)")
         } catch {
             fatalError("oh no!")
         }
