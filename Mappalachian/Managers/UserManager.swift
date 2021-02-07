@@ -7,99 +7,72 @@
 
 import Foundation
 
-struct BannerCredentials {
-    var username: String
-    var password: String
-}
-
-enum BannerError: Error {
-    case incorrectLogin
-}
-
-enum KeychainError: Error {
-    case noPassword
-    case unexpectedPasswordData
-    case unhandledError(status: OSStatus)
-}
-
-class UserManager {
+class UserManager: NSObject, URLSessionDelegate {
     
     static let shared: UserManager = {
         return UserManager()
     }()
     
     let server = "banmobprod.appstate.edu"
+    var authenticationSession: URLSession?
+    var protectionSpace: URLProtectionSpace?
     
-    func deleteLoginInformation() throws {
-        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
-                                    kSecAttrServer as String: server]
-        let status = SecItemDelete(query as CFDictionary)
-        guard status == errSecSuccess || status == errSecItemNotFound else { throw KeychainError.unhandledError(status: status) }
-    }
-    
-    func retrieveLoginInformation() throws -> BannerCredentials {
-        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
-                                    kSecAttrServer as String: server,
-                                    kSecMatchLimit as String: kSecMatchLimitOne,
-                                    kSecReturnAttributes as String: true,
-                                    kSecReturnData as String: true]
-        var item: CFTypeRef?
-        let status = SecItemCopyMatching(query as CFDictionary, &item)
-        guard status != errSecItemNotFound else { throw KeychainError.noPassword }
-        guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
+    override init() {
+        super.init()
         
-        guard let existingItem = item as? [String : Any],
-            let passwordData = existingItem[kSecValueData as String] as? Data,
-            let password = String(data: passwordData, encoding: String.Encoding.utf8),
-            let username = existingItem[kSecAttrAccount as String] as? String
-        else {
-            throw KeychainError.unexpectedPasswordData
-        }
-        return BannerCredentials(username: username, password: password)
+        authenticationSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
+        protectionSpace = URLProtectionSpace(host: server, port: 8443, protocol: "https", realm: "Mobile Integration Server banner-mobileserver", authenticationMethod: NSURLAuthenticationMethodHTTPBasic)
     }
     
-    func storeLoginInformation(_ credentials: BannerCredentials) throws {
-        do {
-            try deleteLoginInformation() // Delete old login information before storing new one
-            let username = credentials.username
-            let password = credentials.password.data(using: String.Encoding.utf8)!
-            let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
-                                        kSecAttrAccount as String: username,
-                                        kSecAttrServer as String: server,
-                                        kSecValueData as String: password]
-            
-            let status = SecItemAdd(query as CFDictionary, nil)
-            guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
+    func deleteLoginInformation() {
+        if let credential = retrieveLoginInformation() {
+            URLCredentialStorage.shared.remove(credential, for: protectionSpace!)
         }
     }
     
-    func login(_ credentials: BannerCredentials, completion: () -> Void) {
-        do {
-//            try storeLoginInformation(credentials)
-            let credentials = try retrieveLoginInformation()
-            print("got credentials: \(credentials.username) \(credentials.password)")
-        } catch {
-            fatalError("oh no!")
-        }
+    func retrieveLoginInformation() -> URLCredential? {
+        return URLCredentialStorage.shared.defaultCredential(for: protectionSpace!)
+    }
+    
+    func storeLoginInformation(username: String, password: String) {
+        deleteLoginInformation() // Delete old login information before storing new one
         
-        let loginData = String(format: "%@:%@", credentials.username, credentials.password).data(using: .utf8)!
-        let base64LoginData = loginData.base64EncodedString()
-
-        if let authenticationURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/security/getUserInfo") {
-            var request = URLRequest(url: authenticationURL)
-            request.httpMethod = "GET"
-            request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
-            
-            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                do {
-                    let string = String(data: data!, encoding: .utf8)
-                    print("finished! \(string)")
-                } catch {
-                    print("oh no!")
+        let credential = URLCredential(user: username, password: password, persistence: .permanent)
+        URLCredentialStorage.shared.setDefaultCredential(credential, for: protectionSpace!)
+    }
+    
+    func authenticate(username: String, password: String, completion: @escaping (Error?) -> Void) {
+        storeLoginInformation(username: username, password: password)
+        
+        let authenticationURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/security/getUserInfo".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!)
+        let request = URLRequest(url: authenticationURL!)
+        let task = authenticationSession!.dataTask(with: request, completionHandler: { (data, response, error) in
+            if let httpResponse = response as? HTTPURLResponse {
+                guard httpResponse.statusCode != 401, error == nil else {
+                    print("error: \(error?.localizedDescription)")
+                    self.deleteLoginInformation()
+                    completion(error)
+                    return
                 }
-            })
-            task.resume()
-        }
+                
+                for cookie in HTTPCookieStorage.shared.cookies! {
+                    print("EXTRACTED COOKIE: \(cookie)")
+                }
+                
+                do {
+                    let userInfo = try JSONSerialization.jsonObject(with: data!, options: [])
+                    print("userInfo: \(userInfo)")
+                } catch {
+                    print("unable to decode json")
+                }
+            }
+        })
+        task.resume()
+    }
+    
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        let credential = retrieveLoginInformation()
+        completionHandler(.useCredential, credential)
     }
     
 }

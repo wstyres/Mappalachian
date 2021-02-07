@@ -81,8 +81,7 @@ class LogInViewController: UITableViewController {
             let passwordCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextInputTableViewCell
             
             if let username = usernameCell.textField.text, !username.isEmpty, let password = passwordCell.textField.text, !password.isEmpty {
-                let credentials = BannerCredentials(username: username, password: password)
-                UserManager.shared.login(credentials) {
+                UserManager.shared.authenticate(username: username, password: password) { (error) in
                     print("Done I Guess")
                 }
             }
