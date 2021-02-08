@@ -9,6 +9,8 @@ import UIKit
 
 class ScheduleViewController: UITableViewController {
     
+    let spinner = UIActivityIndicatorView(style: .medium)
+    
     var userInfo: User?
     var schedule: [Schedule]?
     
@@ -24,24 +26,20 @@ class ScheduleViewController: UITableViewController {
         super.loadView()
         self.title = "Schedule"
         
+        showSpinner()
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         DispatchQueue.global(qos: .userInitiated).async {
             UserManager.shared.fetchUserInfo { (userInfo, error) in
                 if error != nil {
                     print("Could not get userInfo. Reason: \(error!.localizedDescription)")
                 } else {
-                    self.userInfo = userInfo
+                    self.userInfo = userInfo                    
                 }
             }
         }
@@ -50,6 +48,20 @@ class ScheduleViewController: UITableViewController {
     @objc func signOut() {
         UserManager.shared.signOut()
         self.navigationController?.setViewControllers([LogInViewController()], animated: true)
+    }
+    
+    func showSpinner() {
+        DispatchQueue.main.async {
+            self.spinner.startAnimating()
+            self.tableView.backgroundView = self.spinner
+        }
+    }
+    
+    func hideSpinner() {
+        DispatchQueue.main.async {
+            self.spinner.stopAnimating()
+            self.tableView.backgroundView = nil
+        }
     }
     
     // MARK: - Table view data source
