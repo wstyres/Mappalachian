@@ -12,7 +12,7 @@ class ScheduleViewController: UITableViewController {
     let spinner = UIActivityIndicatorView(style: .medium)
     
     var userInfo: User?
-    var schedule: [Schedule]?
+    var schedule: Schedule?
     
     init() {
         super.init(style: .insetGrouped)
@@ -38,8 +38,28 @@ class ScheduleViewController: UITableViewController {
             UserManager.shared.fetchUserInfo { (userInfo, error) in
                 if error != nil {
                     print("Could not get userInfo. Reason: \(error!.localizedDescription)")
-                } else {
-                    self.userInfo = userInfo                    
+                } else if userInfo != nil {
+                    self.userInfo = userInfo
+                    UserManager.shared.fetchSchedule(for: userInfo!) { (schedule, error) in
+                        self.schedule = schedule
+                        
+                        if let name = schedule?.person.name {
+                            var comps = name.components(separatedBy: " ")
+                            if comps.count > 0 {
+                                comps.removeLast() // Removes middle initial
+                                
+                                var lastName = comps.removeFirst()
+                                lastName.removeLast()
+                                let firstName = comps.joined(separator: " ")
+                                self.userInfo?.name = "\(firstName) \(lastName)"
+                            }
+                        }
+                        
+                        DispatchQueue.main.async {
+                            self.hideSpinner()
+                            self.tableView.reloadData()
+                        }
+                    }
                 }
             }
         }
@@ -68,7 +88,7 @@ class ScheduleViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         let hasUserInfo = userInfo != nil
-        let hasCourses = schedule?.count ?? 0 > 0
+        let hasCourses = schedule != nil
         
         return hasCourses ? 2 : hasUserInfo ? 1 : 0
     }
@@ -77,15 +97,20 @@ class ScheduleViewController: UITableViewController {
         if section == 0 {
             return 1
         } else {
-            return schedule?.count ?? 0
+            return schedule?.terms.first?.courses.count ?? 0
         }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "AccountCell")
         
-        cell.textLabel?.text = userInfo?.username
-        cell.detailTextLabel?.text = userInfo?.bannerID
+        if indexPath.section == 0 {
+            cell.textLabel?.text = userInfo?.name
+            cell.detailTextLabel?.text = "\(userInfo!.username)@appstate.edu"
+        } else {
+            cell.textLabel?.text = schedule?.terms.first?.courses[indexPath.row].courseName
+            cell.detailTextLabel?.text = schedule?.terms.first?.courses[indexPath.row].sectionTitle.capitalized
+        }
 
         return cell
     }

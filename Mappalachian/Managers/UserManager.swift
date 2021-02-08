@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User : Codable {
+struct User: Codable {
     var username: String
     var roles: [String]
     var bannerID: String
@@ -19,11 +19,20 @@ struct User : Codable {
 }
 
 struct Schedule: Codable {
-    var person: User
+    var person: Person
     var terms: [Term]
     
     private enum CodingKeys: String, CodingKey {
         case person, terms
+    }
+}
+
+struct Person: Codable {
+    var bannerID: String
+    var name: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case bannerID = "id", name
     }
 }
 
@@ -32,10 +41,10 @@ struct Term: Codable {
     var name: String
     var startDate: String
     var endDate: String
-    var courses: [Course]?
+    var courses: [Course]
     
     private enum CodingKeys: String, CodingKey {
-        case identifier = "id", name, startDate, endDate, courses
+        case identifier = "id", name, startDate, endDate, courses = "sections"
     }
 }
 
@@ -51,11 +60,11 @@ struct Course: Codable {
     var credits: Double?
     var instructors: [Instructor]?
     var meetingPatterns: [MeetingPattern]?
-    var location: String
-    var academicLevels: String
+    var location: String?
+    var academicLevels: String?
     
     private enum CodingKeys: String, CodingKey {
-        case identifier = "sectionId", sectionTitle, isInstructor, courseName, courseDescription, courseSection, firstMeetingDate, lastMeetingDate, credits, instructors, meetingPatterns, location, academicLevels
+        case identifier = "sectionId", sectionTitle, isInstructor, courseName, courseDescription, courseSection = "courseSectionNumber", firstMeetingDate, lastMeetingDate, credits, instructors, meetingPatterns, location, academicLevels
     }
 }
 
@@ -101,6 +110,7 @@ class UserManager: NSObject, URLSessionDelegate {
     var protectionSpace: URLProtectionSpace?
 
     private var userInfo: User? = nil
+    private var schedule: Schedule? = nil
     
     override init() {
         super.init()
@@ -128,7 +138,7 @@ class UserManager: NSObject, URLSessionDelegate {
     
     // Authenticates a user with banner and stores their login information
     func authenticate(_ completion: @escaping (Bool, Error?) -> Void) {
-        let authenticationURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/security/getUserInfo".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!)
+        let authenticationURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/security/getUserInfo")
         let request = URLRequest(url: authenticationURL!)
         let task = authenticationSession!.dataTask(with: request, completionHandler: { (data, response, error) in
             if let httpResponse = response as? HTTPURLResponse {
@@ -151,6 +161,9 @@ class UserManager: NSObject, URLSessionDelegate {
     }
     
     func signOut() {
+        userInfo = nil
+        schedule = nil
+        
         deleteLoginInformation()
         if let cookie = HTTPCookieStorage.shared.cookies?.first(where: { $0.name == "JSESSIONID" && $0.domain == "banmobprod.appstate.edu" }) {
             HTTPCookieStorage.shared.deleteCookie(cookie)
@@ -164,6 +177,33 @@ class UserManager: NSObject, URLSessionDelegate {
             authenticate { (success, error) in
                 completion(self.userInfo, error) // authenticate() sets userInfo when it is done so it'll either be nil or have a value
             }
+        }
+    }
+    
+    func fetchSchedule(for user: User, completion: @escaping(Schedule?, Error?) -> Void) {
+        if schedule != nil {
+            completion(schedule, nil)
+        } else {
+            let scheduleURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/courses/fullview/\(user.bannerID)")
+            let request = URLRequest(url: scheduleURL!)
+            let task = authenticationSession!.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let httpResponse = response as? HTTPURLResponse {
+                    guard httpResponse.statusCode != 401, error == nil else {
+                        self.deleteLoginInformation() // Delete login information if the information was incorrect
+                        completion(nil, error)
+                        return
+                    }
+                    
+                    do {
+                        self.schedule = try JSONDecoder().decode(Schedule.self, from: data!)
+                        completion(self.schedule, nil)
+                    } catch {
+                        print("unable to decode json \(error)")
+                        completion(nil, nil)
+                    }
+                }
+            })
+            task.resume()
         }
     }
     
