@@ -7,6 +7,16 @@
 
 import Foundation
 
+struct User : Codable {
+    var username: String
+    var roles: [String]
+    var bannerID: String
+
+    private enum CodingKeys : String, CodingKey {
+        case username = "authId", roles, bannerID = "userId"
+    }
+}
+
 class UserManager: NSObject, URLSessionDelegate {
     
     static let shared: UserManager = {
@@ -16,6 +26,8 @@ class UserManager: NSObject, URLSessionDelegate {
     let server = "banmobprod.appstate.edu"
     var authenticationSession: URLSession?
     var protectionSpace: URLProtectionSpace?
+
+    private var userInfo: User? = nil
     
     override init() {
         super.init()
@@ -41,33 +53,38 @@ class UserManager: NSObject, URLSessionDelegate {
         URLCredentialStorage.shared.setDefaultCredential(credential, for: protectionSpace!)
     }
     
-    func authenticate(username: String, password: String, completion: @escaping (Error?) -> Void) {
-        storeLoginInformation(username: username, password: password)
-        
+    // Authenticates a user with banner and stores their login information
+    func authenticate(_ completion: @escaping (Bool, Error?) -> Void) {
         let authenticationURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/security/getUserInfo".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!)
         let request = URLRequest(url: authenticationURL!)
         let task = authenticationSession!.dataTask(with: request, completionHandler: { (data, response, error) in
             if let httpResponse = response as? HTTPURLResponse {
                 guard httpResponse.statusCode != 401, error == nil else {
-                    print("error: \(error?.localizedDescription)")
-                    self.deleteLoginInformation()
-                    completion(error)
+                    self.deleteLoginInformation() // Delete login information if the information was incorrect
+                    completion(false, error)
                     return
                 }
                 
-                for cookie in HTTPCookieStorage.shared.cookies! {
-                    print("EXTRACTED COOKIE: \(cookie)")
-                }
-                
                 do {
-                    let userInfo = try JSONSerialization.jsonObject(with: data!, options: [])
-                    print("userInfo: \(userInfo)")
+                    self.userInfo = try JSONDecoder().decode(User.self, from: data!)
+                    completion(true, nil)
                 } catch {
                     print("unable to decode json")
+                    completion(false, nil)
                 }
             }
         })
         task.resume()
+    }
+    
+    func fetchUserInfo(completion: @escaping (User?, Error?) -> Void) {
+        if userInfo != nil {
+            completion(userInfo, nil)
+        } else {
+            authenticate { (success, error) in
+                completion(self.userInfo, error) // authenticate() sets userInfo when it is done so it'll either be nil or have a value
+            }
+        }
     }
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {

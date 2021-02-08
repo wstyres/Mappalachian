@@ -79,10 +79,43 @@ class LogInViewController: UITableViewController {
         if indexPath.section == 1 { // This is our log in button
             let usernameCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! TextInputTableViewCell
             let passwordCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextInputTableViewCell
-            
-            if let username = usernameCell.textField.text, !username.isEmpty, let password = passwordCell.textField.text, !password.isEmpty {
-                UserManager.shared.authenticate(username: username, password: password) { (error) in
-                    print("Done I Guess")
+            if let username = usernameCell.textField.text, let password = passwordCell.textField.text {
+                if username.isEmpty {
+                    let alertController = UIAlertController(title: "Please enter your username", message: "Enter your appstate username to continue.", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                } else if password.isEmpty {
+                    let alertController = UIAlertController(title: "Please enter your password", message: "Enter your appstate password to continue.", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                } else {
+                    UserManager.shared.storeLoginInformation(username: username, password: password)
+                    UserManager.shared.authenticate { (success, error) in
+                        DispatchQueue.main.async {
+                            if success {
+                                let schedule = ScheduleViewController()
+                                self.navigationController?.setViewControllers([schedule], animated: true)
+                            } else if error != nil {
+                                passwordCell.textLabel?.text = ""
+                                let alertController = UIAlertController(title: "Could not log in", message: "An error occurred: \(error!.localizedDescription)", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                                alertController.addAction(okAction)
+                                
+                                self.present(alertController, animated: true, completion: nil)
+                            } else {
+                                passwordCell.textLabel?.text = ""
+                                let alertController = UIAlertController(title: "Could not log in", message: "Incorrect username and/or password", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                                alertController.addAction(okAction)
+                                
+                                self.present(alertController, animated: true, completion: nil)
+                            }
+                        }
+                    }
                 }
             }
         }
