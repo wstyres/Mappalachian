@@ -11,9 +11,82 @@ struct User : Codable {
     var username: String
     var roles: [String]
     var bannerID: String
+    var name: String?
 
-    private enum CodingKeys : String, CodingKey {
-        case username = "authId", roles, bannerID = "userId"
+    private enum CodingKeys: String, CodingKey {
+        case username = "authId", roles, bannerID = "userId", name
+    }
+}
+
+struct Schedule: Codable {
+    var person: User
+    var terms: [Term]
+    
+    private enum CodingKeys: String, CodingKey {
+        case person, terms
+    }
+}
+
+struct Term: Codable {
+    var identifier: String
+    var name: String
+    var startDate: String
+    var endDate: String
+    var courses: [Course]?
+    
+    private enum CodingKeys: String, CodingKey {
+        case identifier = "id", name, startDate, endDate, courses
+    }
+}
+
+struct Course: Codable {
+    var identifier: String
+    var sectionTitle: String
+    var isInstructor: Bool
+    var courseName: String
+    var courseDescription: String?
+    var courseSection: String
+    var firstMeetingDate: String?
+    var lastMeetingDate: String?
+    var credits: Double?
+    var instructors: [Instructor]?
+    var meetingPatterns: [MeetingPattern]?
+    var location: String
+    var academicLevels: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case identifier = "sectionId", sectionTitle, isInstructor, courseName, courseDescription, courseSection, firstMeetingDate, lastMeetingDate, credits, instructors, meetingPatterns, location, academicLevels
+    }
+}
+
+struct Instructor: Codable {
+    var firstName: String
+    var lastName: String
+    var middleInitial: String
+    var bannerID: String
+    var primary: Bool
+    var formattedName: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case firstName, lastName, middleInitial, bannerID = "instructorId", primary, formattedName
+    }
+}
+
+struct MeetingPattern: Codable {
+    var instructionalMethodCode: String
+    var startDate: String
+    var endDate: String
+    var startTime: String
+    var endTime: String
+    var daysOfWeek: [Int]
+    var room: String
+    var building: String
+    var buildingID: String
+    var campus: String
+    var campusID: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case instructionalMethodCode, startDate, endDate, startTime, endTime, daysOfWeek, room, building, buildingID = "buildingId", campus, campusID = "campusId"
     }
 }
 

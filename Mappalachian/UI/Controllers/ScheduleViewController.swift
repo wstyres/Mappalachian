@@ -9,13 +9,8 @@ import UIKit
 
 class ScheduleViewController: UITableViewController {
     
-    var userInfo: User? {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    var userInfo: User?
+    var schedule: [Schedule]?
     
     init() {
         super.init(style: .insetGrouped)
@@ -60,11 +55,18 @@ class ScheduleViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        let hasUserInfo = userInfo != nil
+        let hasCourses = schedule?.count ?? 0 > 0
+        
+        return hasCourses ? 2 : hasUserInfo ? 1 : 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 1
+        } else {
+            return schedule?.count ?? 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
