@@ -77,6 +77,13 @@ class UserManager: NSObject, URLSessionDelegate {
         task.resume()
     }
     
+    func signOut() {
+        deleteLoginInformation()
+        if let cookie = HTTPCookieStorage.shared.cookies?.first(where: { $0.name == "JSESSIONID" && $0.domain == "banmobprod.appstate.edu" }) {
+            HTTPCookieStorage.shared.deleteCookie(cookie)
+        }
+    }
+    
     func fetchUserInfo(completion: @escaping (User?, Error?) -> Void) {
         if userInfo != nil {
             completion(userInfo, nil)

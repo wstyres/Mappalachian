@@ -28,6 +28,8 @@ class ScheduleViewController: UITableViewController {
     override func loadView() {
         super.loadView()
         self.title = "Schedule"
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
     }
     
     override func viewDidLoad() {
@@ -50,6 +52,11 @@ class ScheduleViewController: UITableViewController {
         }
     }
 
+    @objc func signOut() {
+        UserManager.shared.signOut()
+        self.navigationController?.setViewControllers([LogInViewController()], animated: true)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
