@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mapController.tabBarItem.image = UIImage(systemName: "map")
         mapController.tabBarItem.selectedImage = UIImage(systemName: "map.fill")
         
-        let scheduleController = UINavigationController(rootViewController: true ? LogInViewController() : ScheduleViewController())
+        let shouldShowSchedule = UserManager.shared.retrieveLoginInformation() != nil
+        let scheduleController = UINavigationController(rootViewController: shouldShowSchedule ? ScheduleViewController() : LogInViewController())
         scheduleController.tabBarItem.title = "Schedule"
         scheduleController.tabBarItem.image = UIImage(systemName: "calendar")
         
