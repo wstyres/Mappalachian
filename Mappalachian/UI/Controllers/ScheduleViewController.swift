@@ -108,8 +108,9 @@ class ScheduleViewController: UITableViewController {
             cell.textLabel?.text = userInfo?.name
             cell.detailTextLabel?.text = "\(userInfo!.username)@appstate.edu"
         } else {
-            cell.textLabel?.text = schedule?.terms.first?.courses[indexPath.row].courseName
-            cell.detailTextLabel?.text = schedule?.terms.first?.courses[indexPath.row].sectionTitle.capitalized
+            cell.textLabel?.text = schedule?.terms.first?.courses[indexPath.row].name
+            cell.detailTextLabel?.text = schedule?.terms.first?.courses[indexPath.row].title.capitalized
+            cell.accessoryType = .disclosureIndicator
         }
 
         return cell

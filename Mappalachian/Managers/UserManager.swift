@@ -50,11 +50,11 @@ struct Term: Codable {
 
 struct Course: Codable {
     var identifier: String
-    var sectionTitle: String
+    var title: String
     var isInstructor: Bool
-    var courseName: String
-    var courseDescription: String?
-    var courseSection: String
+    var name: String
+    var description: String?
+    var section: String
     var firstMeetingDate: String?
     var lastMeetingDate: String?
     var credits: Double?
@@ -64,7 +64,7 @@ struct Course: Codable {
     var academicLevels: String?
     
     private enum CodingKeys: String, CodingKey {
-        case identifier = "sectionId", sectionTitle, isInstructor, courseName, courseDescription, courseSection = "courseSectionNumber", firstMeetingDate, lastMeetingDate, credits, instructors, meetingPatterns, location, academicLevels
+        case identifier = "sectionId", title = "sectionTitle", isInstructor, name = "courseName", description = "courseDescription", section = "courseSectionNumber", firstMeetingDate, lastMeetingDate, credits, instructors, meetingPatterns, location, academicLevels
     }
 }
 
