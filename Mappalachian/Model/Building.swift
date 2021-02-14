@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class Building: Feature<Building.Properties> {
     struct Properties: Codable {
@@ -14,4 +15,5 @@ class Building: Feature<Building.Properties> {
     }
     
     var levels: [Level] = []
+    var renderedOverlays: [MKOverlay]?
 }
