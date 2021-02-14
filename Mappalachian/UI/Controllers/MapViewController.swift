@@ -15,6 +15,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     var venue: Venue?
     var currentLevelOrdinal: Int?
+    var currentlyRenderedBuilding: Building?
     var mapView: MKMapView!
     
     override func loadView() {
@@ -108,20 +109,34 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         // At a distance of 450, show the units in the levels
-//        if mapView.camera.centerCoordinateDistance <= 450 {
-//            let centerPoint = MKMapPoint(mapView.centerCoordinate)
-//            for overlay in mapView.overlays {
-//                if let polygon = overlay as? MKPolygon {
-//                    guard let renderer = mapView.renderer(for: polygon) as? MKPolygonRenderer else { continue }
-//                    let point = renderer.point(for: centerPoint)
-//                    if renderer.path.contains(point) {
-//                        let feature = currentLevelFeatures.values.flatMap( {$0} ).first(where: { $0.geometry.contains(where: {$0 == polygon}) })
-//                        print("\(feature)")
-//                        break
-//                    }
-//                    continue
-//                }
-//            }
-//        }
+        if mapView.camera.centerCoordinateDistance <= 450 {
+            let centerPoint = MKMapPoint(mapView.centerCoordinate)
+            var foundBuilding: Building? = nil
+            for overlay in mapView.overlays {
+                if let polygon = overlay as? MKPolygon {
+                    guard let renderer = mapView.renderer(for: polygon) as? MKPolygonRenderer else { continue }
+                    let point = renderer.point(for: centerPoint)
+                    if renderer.path.contains(point) {
+                        if let building = venue?.buildings.first(where: { $0.renderedOverlays?.contains(where: { $0.isEqual(overlay) }) as! Bool }) {
+                            foundBuilding = building
+                            break
+                        }
+                    }
+                }
+            }
+            
+            if foundBuilding != nil {
+                if currentlyRenderedBuilding != foundBuilding {
+                    if currentlyRenderedBuilding != nil {
+                        showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
+                    }
+                    currentlyRenderedBuilding = foundBuilding
+                    showFeaturesForLevel(foundBuilding!, foundBuilding!.levels[2])
+                }
+            } else if currentlyRenderedBuilding != nil {
+                showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
+                currentlyRenderedBuilding = nil
+            }
+        }
     }
 }
