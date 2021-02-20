@@ -57,6 +57,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.showsBuildings = false
         mapView.pointOfInterestFilter = .excludingAll
         mapView.delegate = self
+        mapView.showsCompass = false
         
         let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath).appendingPathComponent("Data")
         let geoJSONDecoder = GeoJSONDecoder()
