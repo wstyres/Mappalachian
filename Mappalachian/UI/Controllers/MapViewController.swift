@@ -81,6 +81,43 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let overlays = features.flatMap({ $0.geometry }).compactMap({ $0 as? MKOverlay })
         building.renderedOverlays = overlays
         mapView.addOverlays(overlays)
+        
+        if currentlyRenderedBuilding != nil {
+            var levelViews = [UIView]()
+            for level in building.levels {
+                if level == building.levels.last {
+                    continue
+                }
+                
+                let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // UIVisualEffectView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+//                view.effect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .dark))
+                view.backgroundColor = .systemPink
+                
+                let label = UILabel(frame: view.frame)
+                label.center = view.center
+                label.text = level.properties?.shortName
+                label.textColor = UIColor.white
+                label.textAlignment = .center
+                view.addSubview(label)
+                
+                levelViews.append(view)
+            }
+
+            let levelPicker = UIStackView(arrangedSubviews: levelViews)
+            levelPicker.axis = .vertical
+            levelPicker.layer.cornerRadius = 10
+            levelPicker.layer.masksToBounds = true
+            levelPicker.distribution = .fillEqually
+            mapView.addSubview(levelPicker)
+            
+            NSLayoutConstraint.activate([
+                levelPicker.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 8),
+                levelPicker.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 8),
+                levelPicker.heightAnchor.constraint(equalToConstant: CGFloat(50 * (building.levels.count - 1))),
+                levelPicker.widthAnchor.constraint(equalToConstant: 50),
+            ])
+            levelPicker.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {

@@ -19,7 +19,7 @@ class ScheduleViewController: UITableViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("coder not supported")
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func loadView() {
