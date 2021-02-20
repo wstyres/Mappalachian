@@ -8,7 +8,7 @@
 import UIKit
 
 class LevelPickerView: UIView {
-    var blurView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+    var blurView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
     var stackView: UIStackView = UIStackView()
     
     var levelNames: [String] = [] {
@@ -38,7 +38,7 @@ class LevelPickerView: UIView {
             }
 
             if let newLevel = selectedLevel {
-                stackView.arrangedSubviews[newLevel].backgroundColor = UIColor.secondarySystemBackground
+                stackView.arrangedSubviews[newLevel].backgroundColor = UIColor.systemBackground
             }
         }
     }
@@ -66,8 +66,9 @@ class LevelPickerView: UIView {
         ])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.layer.cornerRadius = 10
-        self.layer.masksToBounds = true
+        blurView.layer.cornerRadius = 10
+        blurView.layer.masksToBounds = true
+        
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 1)
         self.layer.shadowOpacity = 0.4
