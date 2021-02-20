@@ -17,6 +17,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var currentLevelOrdinal: Int?
     var currentlyRenderedBuilding: Building?
     var mapView: MKMapView!
+    var levelPicker: UIStackView!
+    var levelPickerHeightConstraint: NSLayoutConstraint!
     
     override func loadView() {
         super.loadView()
@@ -33,6 +35,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor)
         ])
         mapView.translatesAutoresizingMaskIntoConstraints = false
+        
+        levelPicker = UIStackView()
+        levelPicker.axis = .vertical
+        levelPicker.layer.cornerRadius = 10
+        levelPicker.layer.masksToBounds = true
+        levelPicker.distribution = .fillEqually
+        levelPicker.isHidden = true
+        
+        mapView.addSubview(levelPicker)
+        NSLayoutConstraint.activate([
+            levelPicker.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 8),
+            levelPicker.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 8),
+            levelPicker.widthAnchor.constraint(equalToConstant: 50),
+        ])
+        levelPickerHeightConstraint = levelPicker.heightAnchor.constraint(equalToConstant: CGFloat(50 * levelPicker.arrangedSubviews.count))
+        levelPickerHeightConstraint.isActive = true
+        levelPicker.translatesAutoresizingMaskIntoConstraints = false
     }
     
     override func viewDidLoad() {
@@ -82,10 +101,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         building.renderedOverlays = overlays
         mapView.addOverlays(overlays)
         
-        if currentlyRenderedBuilding != nil {
-            var levelViews = [UIView]()
-            for level in building.levels {
-                if level == building.levels.last {
+        for view in levelPicker.arrangedSubviews {
+            view.removeFromSuperview()
+        }
+        
+        if currentlyRenderedBuilding != nil && level != building.levels.last {
+            for level in currentlyRenderedBuilding!.levels {
+                if level == currentlyRenderedBuilding!.levels.last {
                     continue
                 }
                 
@@ -100,23 +122,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 label.textAlignment = .center
                 view.addSubview(label)
                 
-                levelViews.append(view)
+                levelPicker.addArrangedSubview(view)
             }
 
-            let levelPicker = UIStackView(arrangedSubviews: levelViews)
-            levelPicker.axis = .vertical
-            levelPicker.layer.cornerRadius = 10
-            levelPicker.layer.masksToBounds = true
-            levelPicker.distribution = .fillEqually
-            mapView.addSubview(levelPicker)
-            
-            NSLayoutConstraint.activate([
-                levelPicker.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 8),
-                levelPicker.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 8),
-                levelPicker.heightAnchor.constraint(equalToConstant: CGFloat(50 * (building.levels.count - 1))),
-                levelPicker.widthAnchor.constraint(equalToConstant: 50),
-            ])
-            levelPicker.translatesAutoresizingMaskIntoConstraints = false
+            levelPickerHeightConstraint.constant = CGFloat(levelPicker.arrangedSubviews.count * 50)
+            levelPicker.isHidden = false
+        } else {
+            levelPicker.isHidden = true
         }
     }
     
