@@ -17,7 +17,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var currentLevelOrdinal: Int?
     var currentlyRenderedBuilding: Building?
     var mapView: MKMapView!
-    var levelPicker: UIStackView!
+    var levelPicker: LevelPickerView!
     var levelPickerHeightConstraint: NSLayoutConstraint!
     
     override func loadView() {
@@ -36,20 +36,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         ])
         mapView.translatesAutoresizingMaskIntoConstraints = false
         
-        levelPicker = UIStackView()
-        levelPicker.axis = .vertical
-        levelPicker.layer.cornerRadius = 10
-        levelPicker.layer.masksToBounds = true
-        levelPicker.distribution = .fillEqually
-        levelPicker.isHidden = true
-        
+        levelPicker = LevelPickerView()
+
         mapView.addSubview(levelPicker)
         NSLayoutConstraint.activate([
             levelPicker.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 8),
             levelPicker.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 8),
             levelPicker.widthAnchor.constraint(equalToConstant: 50),
         ])
-        levelPickerHeightConstraint = levelPicker.heightAnchor.constraint(equalToConstant: CGFloat(50 * levelPicker.arrangedSubviews.count))
+        levelPickerHeightConstraint = levelPicker.heightAnchor.constraint(equalToConstant: CGFloat(50 * levelPicker.levelNames.count))
         levelPickerHeightConstraint.isActive = true
         levelPicker.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -101,31 +96,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         building.renderedOverlays = overlays
         mapView.addOverlays(overlays)
         
-        for view in levelPicker.arrangedSubviews {
-            view.removeFromSuperview()
-        }
         
         if currentlyRenderedBuilding != nil && level != building.levels.last {
-            for level in currentlyRenderedBuilding!.levels {
-                if level == currentlyRenderedBuilding!.levels.last {
-                    continue
-                }
-                
-                let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // UIVisualEffectView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-//                view.effect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .dark))
-                view.backgroundColor = .systemPink
-                
-                let label = UILabel(frame: view.frame)
-                label.center = view.center
-                label.text = level.properties?.shortName
-                label.textColor = UIColor.white
-                label.textAlignment = .center
-                view.addSubview(label)
-                
-                levelPicker.addArrangedSubview(view)
-            }
-
-            levelPickerHeightConstraint.constant = CGFloat(levelPicker.arrangedSubviews.count * 50)
+            levelPicker.levelNames = building.levels.compactMap({ $0.properties?.shortName })
+            
+            levelPickerHeightConstraint.constant = CGFloat(levelPicker.levelNames.count * 50)
             levelPicker.isHidden = false
         } else {
             levelPicker.isHidden = true

@@ -44,12 +44,12 @@
                     "type": "Point"
                 },
                 "name": {
-                    "en": "Ground Floor"
+                    "en": "1st Floor"
                 },
                 "ordinal": 0,
-                "outdoor": true,
+                "outdoor": false,
                 "restriction": null,
-                "short_name": "G"
+                "short_name": "1"
             },
             "type": "Feature"
         },
@@ -100,7 +100,7 @@
                     "en": "Level 2"
                 },
                 "ordinal": 2,
-                "outdoor": true,
+                "outdoor": false,
                 "restriction": null,
                 "short_name": "2"
             },

@@ -12,6 +12,7 @@
 		890774C02543840A00326CBB /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890774BF2543840A00326CBB /* Level.swift */; };
 		890774C52543841A00326CBB /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890774C42543841A00326CBB /* Venue.swift */; };
 		890774CA254384A100326CBB /* GeoJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890774C9254384A100326CBB /* GeoJSONDecoder.swift */; };
+		892E970D25E1B3CF00C5EF7E /* LevelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E970C25E1B3CF00C5EF7E /* LevelPickerView.swift */; };
 		89403E86253F80EF006A9B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403E85253F80EF006A9B90 /* AppDelegate.swift */; };
 		89403E88253F80EF006A9B90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403E87253F80EF006A9B90 /* SceneDelegate.swift */; };
 		89403E92253F80F0006A9B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89403E91253F80F0006A9B90 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		890774BF2543840A00326CBB /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		890774C42543841A00326CBB /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		890774C9254384A100326CBB /* GeoJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONDecoder.swift; sourceTree = "<group>"; };
+		892E970C25E1B3CF00C5EF7E /* LevelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPickerView.swift; sourceTree = "<group>"; };
 		89403E82253F80EF006A9B90 /* Mappalachian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mappalachian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89403E85253F80EF006A9B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89403E87253F80EF006A9B90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				8962D56725C8D43800C4CB8F /* TextInputTableViewCell.swift */,
+				892E970C25E1B3CF00C5EF7E /* LevelPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				89AA607C255463B4001F97D1 /* Unit.swift in Sources */,
 				89403E86253F80EF006A9B90 /* AppDelegate.swift in Sources */,
 				890774C52543841A00326CBB /* Venue.swift in Sources */,
+				892E970D25E1B3CF00C5EF7E /* LevelPickerView.swift in Sources */,
 				890774B8254383FB00326CBB /* Feature.swift in Sources */,
 				8962D56825C8D43800C4CB8F /* TextInputTableViewCell.swift in Sources */,
 				8962D55725C7B1D400C4CB8F /* ScheduleViewController.swift in Sources */,
