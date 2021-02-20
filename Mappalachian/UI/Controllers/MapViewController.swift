@@ -131,12 +131,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                         showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
                     }
                     currentlyRenderedBuilding = foundBuilding
-                    showFeaturesForLevel(foundBuilding!, foundBuilding!.levels[2])
+                    showFeaturesForLevel(foundBuilding!, foundBuilding!.levels[foundBuilding!.levels.count - 2])
+                    self.navigationItem.title = foundBuilding?.properties?.name
                 }
             } else if currentlyRenderedBuilding != nil {
                 showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
                 currentlyRenderedBuilding = nil
+                
+                self.navigationItem.title = venue?.properties?.name
             }
+        } else if currentlyRenderedBuilding != nil {
+            showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
+            currentlyRenderedBuilding = nil
+            self.navigationItem.title = venue?.properties?.name
         }
     }
 }
