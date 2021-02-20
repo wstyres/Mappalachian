@@ -99,7 +99,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         
         if currentlyRenderedBuilding != nil && level != building.levels.last {
-            levelPicker.levelNames = building.levels.compactMap({ $0.properties?.shortName })
+            var levelNames = building.levels.compactMap({ $0.properties?.shortName })
+            levelNames.removeLast()
+            levelPicker.levelNames = levelNames
+            levelPicker.selectedLevel = level.properties?.ordinal
             
             levelPickerHeightConstraint.constant = CGFloat(levelPicker.levelNames.count * 50)
             levelPicker.isHidden = false

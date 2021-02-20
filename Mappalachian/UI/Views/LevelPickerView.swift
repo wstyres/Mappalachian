@@ -21,6 +21,7 @@ class LevelPickerView: UIView {
             for (index, name) in levelNames.enumerated() {
                 let button = UIButton()
                 button.setTitle(name, for: .normal)
+                button.titleLabel?.font = UIFont.monospacedSystemFont(ofSize: button.titleLabel!.font.pointSize, weight: .medium)
                 button.setTitleColor(.label, for: .normal)
                 button.heightAnchor.constraint(equalToConstant: 50).isActive = true
                 button.tag = index
