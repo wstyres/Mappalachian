@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol LevelPickerDelegate {
+    func selectLevel(ordinal: Int)
+}
+
 class LevelPickerView: UIView {
     var blurView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
     var stackView: UIStackView = UIStackView()
+    var delegate: LevelPickerDelegate?
     
     var levelNames: [String] = [] {
         didSet {
@@ -34,12 +39,13 @@ class LevelPickerView: UIView {
     
     var selectedLevel: Int? {
         didSet {
-            if let oldLevel = oldValue {
+            if let oldLevel = oldValue, oldLevel >= 0 && oldLevel < stackView.arrangedSubviews.count {
                 stackView.arrangedSubviews[oldLevel].backgroundColor = nil
             }
 
-            if let newLevel = selectedLevel {
+            if let newLevel = selectedLevel, newLevel >= 0 && newLevel < stackView.arrangedSubviews.count {
                 stackView.arrangedSubviews[newLevel].backgroundColor = UIColor.systemBackground
+                delegate?.selectLevel(ordinal: newLevel)
             }
         }
     }

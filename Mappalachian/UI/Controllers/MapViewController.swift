@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegate {
     var locationManager = CLLocationManager()
     
     var venue: Venue?
@@ -37,6 +37,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         
         levelPicker = LevelPickerView()
+        levelPicker.delegate = self
 
         mapView.addSubview(levelPicker)
         NSLayoutConstraint.activate([
@@ -74,7 +75,40 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
         
-        self.navigationItem.title = venue?.properties?.name ?? "Unknown"
+        if let name = venue?.properties?.name {
+            self.title = name
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle.fill"), style: .plain, target: self, action: #selector(showInfo))
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.secondaryLabel
+        }
+    }
+    
+    private var _title: String?
+    override var title: String? {
+        set {
+            _title = newValue!
+            
+            if let titleLabel = navigationItem.leftBarButtonItem?.customView as? UILabel {
+                let animation = CATransition()
+                animation.duration = 0.25
+                animation.type = .fade
+                
+                titleLabel.layer.add(animation, forKey: "fadeText")
+                titleLabel.text = _title
+            } else {
+                let titleLabel = UILabel()
+                titleLabel.textColor = .label
+                titleLabel.text = _title
+                
+                let titleFont = UIFont.preferredFont(forTextStyle: .title2)
+                let largeTitleFont = UIFont(descriptor: titleFont.fontDescriptor.withSymbolicTraits(.traitBold)!, size: titleFont.pointSize)
+                titleLabel.font = largeTitleFont
+                
+                navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
+            }
+        }
+        get {
+            return _title
+        }
     }
     
     func showFeaturesForLevel(_ building: Building, _ level: Level) {
@@ -135,6 +169,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         return renderer
     }
     
+    func selectLevel(ordinal: Int) {
+        if ordinal == currentLevelOrdinal {
+            return
+        }
+        
+        showFeaturesForLevel(currentlyRenderedBuilding!, (currentlyRenderedBuilding?.levels[ordinal])!)
+    }
+    
+    @objc func showInfo() {
+        
+    }
+    
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         // At a distance of 450, show the units in the levels
         if mapView.camera.centerCoordinateDistance <= 450 {
@@ -160,18 +206,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     }
                     currentlyRenderedBuilding = foundBuilding
                     showFeaturesForLevel(foundBuilding!, foundBuilding!.levels[foundBuilding!.levels.count - 2])
-                    self.navigationItem.title = foundBuilding?.properties?.name
+                    self.title = foundBuilding?.properties?.name
                 }
             } else if currentlyRenderedBuilding != nil {
                 showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
                 currentlyRenderedBuilding = nil
                 
-                self.navigationItem.title = venue?.properties?.name
+                self.title = venue?.properties?.name
             }
         } else if currentlyRenderedBuilding != nil {
             showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
             currentlyRenderedBuilding = nil
-            self.navigationItem.title = venue?.properties?.name
+            self.title = venue?.properties?.name
         }
     }
 }
