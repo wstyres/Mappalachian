@@ -78,7 +78,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         if let name = venue?.properties?.name {
             self.title = name
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle.fill"), style: .plain, target: self, action: #selector(showInfo))
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.secondaryLabel
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.tertiaryLabel
         }
     }
     
@@ -208,13 +208,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
                     showFeaturesForLevel(foundBuilding!, foundBuilding!.levels[foundBuilding!.levels.count - 2])
                     self.title = foundBuilding?.properties?.name
                 }
-            } else if currentlyRenderedBuilding != nil {
-                showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
-                currentlyRenderedBuilding = nil
-                
-                self.title = venue?.properties?.name
+                return
             }
-        } else if currentlyRenderedBuilding != nil {
+        }
+        
+        if currentlyRenderedBuilding != nil {
             showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
             currentlyRenderedBuilding = nil
             self.title = venue?.properties?.name
