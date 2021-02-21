@@ -42,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         mapView.addSubview(levelPicker)
         NSLayoutConstraint.activate([
             levelPicker.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 8),
-            levelPicker.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 8),
+            levelPicker.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -8),
             levelPicker.widthAnchor.constraint(equalToConstant: 50),
         ])
         levelPickerHeightConstraint = levelPicker.heightAnchor.constraint(equalToConstant: CGFloat(50 * levelPicker.levelNames.count))
@@ -139,9 +139,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             levelPicker.selectedLevel = level.properties?.ordinal
             
             levelPickerHeightConstraint.constant = CGFloat(levelPicker.levelNames.count * 50)
-            levelPicker.isHidden = false
         } else {
-            levelPicker.isHidden = true
+            levelPicker.levelNames = []
+            levelPickerHeightConstraint.constant = 0.0
         }
     }
     
