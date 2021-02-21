@@ -18,6 +18,12 @@ class LevelPickerView: UIView {
     
     var levelNames: [String] = [] {
         didSet {
+            let animation = CATransition()
+            animation.duration = 0.25
+            animation.type = .fade
+            
+            layer.add(animation, forKey: "fadeLevels")
+            
             let existingViews = stackView.arrangedSubviews
             for view in existingViews {
                 view.removeFromSuperview()
