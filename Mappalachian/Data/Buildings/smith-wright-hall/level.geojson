@@ -33,6 +33,90 @@
                     "type": "Point"
                 },
                 "name": {
+                    "en": "1st Floor"
+                },
+                "ordinal": 0,
+                "outdoor": false,
+                "restriction": null,
+                "short_name": "1"
+            },
+            "type": "Feature"
+        },
+        {
+            "feature_type": "level",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-81.6810131, 36.2149911],
+                        [-81.6809704, 36.2148712],
+                        [-81.6809539, 36.2148751],
+                        [-81.6809119, 36.2147572],
+                        [-81.6809278, 36.2147536],
+                        [-81.6808866, 36.2146381],
+                        [-81.680657, 36.2146914],
+                        [-81.6807, 36.214812],
+                        [-81.6806626, 36.2148207],
+                        [-81.6806782, 36.2148646],
+                        [-81.6807156, 36.2148559],
+                        [-81.6807828, 36.2150445]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "smith-wright-hall-level-3",
+            "properties": {
+                "address_id": "smith-wright-hall-addr",
+                "building_ids": [
+                    "smith-wright-hall"
+                ],
+                "category": "unspecified",
+                "display_point": {
+                    "coordinates": [-81.680471, 36.214277],
+                    "type": "Point"
+                },
+                "name": {
+                    "en": "2nd Floor"
+                },
+                "ordinal": 1,
+                "outdoor": false,
+                "restriction": null,
+                "short_name": "2"
+            },
+            "type": "Feature"
+        },
+        {
+            "feature_type": "level",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-81.6810131, 36.2149911],
+                        [-81.6809704, 36.2148712],
+                        [-81.6809539, 36.2148751],
+                        [-81.6809119, 36.2147572],
+                        [-81.6809278, 36.2147536],
+                        [-81.6808866, 36.2146381],
+                        [-81.680657, 36.2146914],
+                        [-81.6807, 36.214812],
+                        [-81.6806626, 36.2148207],
+                        [-81.6806782, 36.2148646],
+                        [-81.6807156, 36.2148559],
+                        [-81.6807828, 36.2150445]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "smith-wright-hall-level-3",
+            "properties": {
+                "address_id": "smith-wright-hall-addr",
+                "building_ids": [
+                    "smith-wright-hall"
+                ],
+                "category": "unspecified",
+                "display_point": {
+                    "coordinates": [-81.680471, 36.214277],
+                    "type": "Point"
+                },
+                "name": {
                     "en": "3rd Floor"
                 },
                 "ordinal": 2,
