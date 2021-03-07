@@ -1,0 +1,2108 @@
+{
+    "type": "FeatureCollection",
+    "name": "unit",
+    "features": [
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair1Level2",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803665, 36.2143589],
+                        [-81.6803396, 36.2142813],
+                        [-81.680269, 36.2142979],
+                        [-81.6802957, 36.2143752]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair2Level2",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803239, 36.2144736],
+                        [-81.6803139, 36.2144456],
+                        [-81.6802452, 36.2144614],
+                        [-81.6802551, 36.2144892]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair3Level2",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807717, 36.2143669],
+                        [-81.6807632, 36.2143429],
+                        [-81.6806892, 36.2143599],
+                        [-81.6806975, 36.2143839]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair4Level2",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807111, 36.2140656],
+                        [-81.68069, 36.2140068],
+                        [-81.6806547, 36.2140145],
+                        [-81.6806599, 36.2140294],
+                        [-81.6806349, 36.2140354],
+                        [-81.6806507, 36.2140797]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair5Level2",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6801901, 36.2141859],
+                        [-81.6801802, 36.2141578],
+                        [-81.6800993, 36.2141761],
+                        [-81.6801095, 36.2142044]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Elevator1Floor2",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "elevator",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803994, 36.214451],
+                        [-81.6803912, 36.2144271],
+                        [-81.6803679, 36.2144323],
+                        [-81.6803764, 36.2144563]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Elevator2Floor2",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "elevator",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807145, 36.2145626],
+                        [-81.6807076, 36.2145434],
+                        [-81.6806734, 36.2145514],
+                        [-81.6806803, 36.2145703]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Elevator2Concrete",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "concrete",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807202, 36.2145785],
+                        [-81.6807145, 36.2145626],
+                        [-81.6806803, 36.2145703],
+                        [-81.6806861, 36.2145864]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "RightSideConcrete",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "concrete",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6802138, 36.2144476],
+                        [-81.6802041, 36.2144201],
+                        [-81.6801664, 36.2144285],
+                        [-81.6801765, 36.2144561]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "216C",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808578, 36.214603],
+                        [-81.6808447, 36.2145673],
+                        [-81.6808007, 36.2145775],
+                        [-81.6808136, 36.2146131]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "216B",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "library",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808136, 36.2146131],
+                        [-81.6807967, 36.2145661],
+                        [-81.6807556, 36.214576],
+                        [-81.6807724, 36.2146225]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "216A-1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807724, 36.2146225],
+                        [-81.6807556, 36.214576],
+                        [-81.6807223, 36.2145838],
+                        [-81.6807202, 36.2145785],
+                        [-81.6806861, 36.2145864],
+                        [-81.6806975, 36.2146177],
+                        [-81.6807256, 36.2146112],
+                        [-81.6807327, 36.2146315],
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "216A-1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807724, 36.2146225],
+                        [-81.6807556, 36.214576],
+                        [-81.6807223, 36.2145838],
+                        [-81.6807202, 36.2145785],
+                        [-81.6806861, 36.2145864],
+                        [-81.6806975, 36.2146177],
+                        [-81.6807256, 36.2146112],
+                        [-81.6807327, 36.2146315],
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "216A",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "its",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807967, 36.2145661],
+                        [-81.6807824, 36.214526],
+                        [-81.6807076, 36.2145434],
+                        [-81.6807223, 36.2145838]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "216+216D",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "its",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809936, 36.2145721],
+                        [-81.6809715, 36.2145085],
+                        [-81.6808324, 36.2145409],
+                        [-81.6808234, 36.2145165],
+                        [-81.6807824, 36.214526],
+                        [-81.6808007, 36.2145775],
+                        [-81.6808447, 36.2145673],
+                        [-81.6808578, 36.214603]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "216E",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6810367, 36.2145623],
+                        [-81.6810189, 36.214513],
+                        [-81.6809765, 36.214523],
+                        [-81.6809936, 36.2145721]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218B",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808788, 36.2145302],
+                        [-81.6808689, 36.2145026],
+                        [-81.6808267, 36.2145125],
+                        [-81.6808278, 36.2145155],
+                        [-81.6808234, 36.2145165],
+                        [-81.6808324, 36.2145409]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218D",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809248, 36.2145194],
+                        [-81.6809149, 36.2144919],
+                        [-81.6808689, 36.2145026],
+                        [-81.6808788, 36.2145302]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218E",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809715, 36.2145085],
+                        [-81.6809616, 36.2144809],
+                        [-81.6809149, 36.2144919],
+                        [-81.6809248, 36.2145194]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218C",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809016, 36.2144826],
+                        [-81.6808913, 36.2144532],
+                        [-81.6808518, 36.2144623],
+                        [-81.6808623, 36.214492]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218M",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808913, 36.2144532],
+                        [-81.6808811, 36.214424],
+                        [-81.6808415, 36.214433],
+                        [-81.6808518, 36.2144623]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218K",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809308, 36.2144442],
+                        [-81.6809206, 36.214415],
+                        [-81.6808811, 36.214424],
+                        [-81.6808913, 36.2144532]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218F",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809411, 36.2144732],
+                        [-81.6809308, 36.2144442],
+                        [-81.6808913, 36.2144532],
+                        [-81.6809016, 36.2144826]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218G",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6810189, 36.214513],
+                        [-81.6809992, 36.2144586],
+                        [-81.680957, 36.2144683],
+                        [-81.6809765, 36.214523]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218H",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809992, 36.2144586],
+                        [-81.68099, 36.2144332],
+                        [-81.680948, 36.2144427],
+                        [-81.680957, 36.2144683]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218J",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.68099, 36.2144332],
+                        [-81.6809801, 36.2144059],
+                        [-81.6809384, 36.2144154],
+                        [-81.680948, 36.2144427]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218L",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809801, 36.2144059],
+                        [-81.6809692, 36.2143756],
+                        [-81.6809278, 36.2143851],
+                        [-81.6809384, 36.2144154]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "222",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6809454, 36.2143811],
+                        [-81.6809215, 36.214314],
+                        [-81.6808438, 36.2143317],
+                        [-81.6808692, 36.2143985]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218N",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "conference",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808734, 36.2144106],
+                        [-81.6808577, 36.2143677],
+                        [-81.6808037, 36.2143801],
+                        [-81.6808189, 36.2144229]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "217C",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "restroom.male",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808184, 36.2144899],
+                        [-81.6808067, 36.2144579],
+                        [-81.6807687, 36.2144665],
+                        [-81.6807757, 36.2144848],
+                        [-81.6807948, 36.2144808],
+                        [-81.6807995, 36.2144942]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "217C",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "restroom.female",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807757, 36.2144848],
+                        [-81.6807687, 36.2144665],
+                        [-81.6807286, 36.2144757],
+                        [-81.6807397, 36.2145076],
+                        [-81.6807613, 36.2145027],
+                        [-81.6807565, 36.2144892]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "217B",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "janitor",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807995, 36.2144942],
+                        [-81.6807948, 36.2144808],
+                        [-81.6807565, 36.2144892],
+                        [-81.6807613, 36.2145027]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "217ZWall218A",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "pedestrian",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-2",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6808267, 36.2145125],
+                    [-81.6808184, 36.2144899]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "218",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "privatelounge",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808067, 36.2144579],
+                        [-81.6807963, 36.2144281],
+                        [-81.6807187, 36.2144459],
+                        [-81.6807286, 36.2144757]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "220",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807963, 36.2144281],
+                        [-81.6807808, 36.2143851],
+                        [-81.6807037, 36.2144024],
+                        [-81.6807187, 36.2144459]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "218AWall222Z",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "pedestrian",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-2",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6808183, 36.2144231],
+                    [-81.6807941, 36.2144286]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "222ZWall200F",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "pedestrian",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-2",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6807037, 36.2144024],
+                    [-81.6806975, 36.2143839]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "222ZWall234Y",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "pedestrian",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-2",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6808002, 36.2143604],
+                    [-81.6807717, 36.2143669]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234P",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808506, 36.214349],
+                        [-81.6808399, 36.2143206],
+                        [-81.6807901, 36.2143318],
+                        [-81.6808002, 36.2143604]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "226",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807632, 36.2143429],
+                        [-81.6807437, 36.214286],
+                        [-81.6806693, 36.2143029],
+                        [-81.6806892, 36.2143599]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "228",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807437, 36.214286],
+                        [-81.680727, 36.2142374],
+                        [-81.6806526, 36.214254],
+                        [-81.6806693, 36.2143029]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "230",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.680727, 36.2142374],
+                        [-81.6807104, 36.2141889],
+                        [-81.6806362, 36.2142057],
+                        [-81.6806526, 36.214254]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "232",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807104, 36.2141889],
+                        [-81.6806772, 36.2140918],
+                        [-81.6806127, 36.2141068],
+                        [-81.6806176, 36.214122],
+                        [-81.6806082, 36.2141239],
+                        [-81.6806362, 36.2142057]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234N",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808399, 36.2143206],
+                        [-81.6808269, 36.2142832],
+                        [-81.6807957, 36.2142901],
+                        [-81.6808086, 36.2143276]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234M",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807895, 36.2143184],
+                        [-81.6807758, 36.2142788],
+                        [-81.6807437, 36.214286],
+                        [-81.6807572, 36.2143255]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234L",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807758, 36.2142788],
+                        [-81.6807625, 36.21424],
+                        [-81.6807303, 36.2142471],
+                        [-81.6807437, 36.214286]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234K",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808269, 36.2142832],
+                        [-81.6808133, 36.2142443],
+                        [-81.6807824, 36.2142514],
+                        [-81.6807957, 36.2142901]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234J",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6808133, 36.2142443],
+                        [-81.6807995, 36.2142048],
+                        [-81.6807689, 36.2142117],
+                        [-81.6807824, 36.2142514]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234H",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807625, 36.21424],
+                        [-81.6807489, 36.2142004],
+                        [-81.6807169, 36.2142077],
+                        [-81.6807303, 36.2142471]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234G",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807489, 36.2142004],
+                        [-81.6807355, 36.214161],
+                        [-81.6807034, 36.2141683],
+                        [-81.6807169, 36.2142077]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234F",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807995, 36.2142048],
+                        [-81.6807869, 36.2141688],
+                        [-81.6807565, 36.2141755],
+                        [-81.6807689, 36.2142117]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234E",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807869, 36.2141688],
+                        [-81.6807735, 36.2141303],
+                        [-81.6807434, 36.2141371],
+                        [-81.6807565, 36.2141755]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234D",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807735, 36.2141303],
+                        [-81.680761, 36.2140945],
+                        [-81.6807313, 36.2141014],
+                        [-81.6807434, 36.2141371]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234C",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807355, 36.214161],
+                        [-81.6807221, 36.214122],
+                        [-81.68069, 36.2141293],
+                        [-81.6807034, 36.2141683]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234B",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807221, 36.214122],
+                        [-81.6807093, 36.2140847],
+                        [-81.6806772, 36.2140918],
+                        [-81.68069, 36.2141293]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "234A",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.680761, 36.2140945],
+                        [-81.6807479, 36.214057],
+                        [-81.6807185, 36.2140639],
+                        [-81.6807313, 36.2141014]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "223",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6806776, 36.2144532],
+                        [-81.680656, 36.2143913],
+                        [-81.680626, 36.2143984],
+                        [-81.6806147, 36.2143661],
+                        [-81.6805383, 36.2143834],
+                        [-81.6805712, 36.2144782],
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "211",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6805712, 36.2144782],
+                        [-81.6805383, 36.2143834],
+                        [-81.6804611, 36.2144008],
+                        [-81.6804724, 36.2144328],
+                        [-81.6804429, 36.2144395],
+                        [-81.6804642, 36.2145023],
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "207",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6805383, 36.2143834],
+                        [-81.6805087, 36.214298],
+                        [-81.6804031, 36.2143221],
+                        [-81.6804221, 36.2143781],
+                        [-81.680451, 36.2143714],
+                        [-81.6804611, 36.2144008]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "227",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.680634, 36.2143295],
+                        [-81.680615, 36.2142738],
+                        [-81.6805087, 36.214298],
+                        [-81.6805383, 36.2143834],
+                        [-81.6806147, 36.2143661],
+                        [-81.6806047, 36.2143365]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "225",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "teledata",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6806489, 36.214373],
+                        [-81.6806399, 36.2143465],
+                        [-81.6806102, 36.2143534],
+                        [-81.6806195, 36.2143797]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "225",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "storage",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6804655, 36.2144142],
+                        [-81.6804568, 36.2143882],
+                        [-81.6804277, 36.2143947],
+                        [-81.6804366, 36.2144209]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "229",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.680615, 36.2142738],
+                        [-81.6805959, 36.2142179],
+                        [-81.6805662, 36.2142245],
+                        [-81.6805561, 36.2141949],
+                        [-81.6804795, 36.2142123],
+                        [-81.6805087, 36.214298]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "231",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "storage",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6805903, 36.2142014],
+                        [-81.6805811, 36.2141748],
+                        [-81.6805515, 36.2141814],
+                        [-81.6805605, 36.214208]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "233",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6805754, 36.2141577],
+                        [-81.6805568, 36.2141036],
+                        [-81.6804498, 36.2141275],
+                        [-81.6804795, 36.2142123],
+                        [-81.6805561, 36.2141949],
+                        [-81.6805457, 36.2141645]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "203",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803979, 36.2143072],
+                        [-81.6803852, 36.2142708],
+                        [-81.6803396, 36.2142813],
+                        [-81.6803521, 36.2143175]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "205",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6805087, 36.214298],
+                        [-81.6804795, 36.2142123],
+                        [-81.6804024, 36.2142298],
+                        [-81.6804153, 36.2142639],
+                        [-81.6803852, 36.2142708],
+                        [-81.6803979, 36.2143072],
+                        [-81.6804107, 36.2143042],
+                        [-81.6804161, 36.2143191]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "243",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6804795, 36.2142123],
+                        [-81.6804498, 36.2141275],
+                        [-81.6803653, 36.2141467],
+                        [-81.680369, 36.214157],
+                        [-81.6803474, 36.2141617],
+                        [-81.6803634, 36.2142071],
+                        [-81.6803933, 36.2142003],
+                        [-81.6804024, 36.2142298]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "251",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "classroom",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803634, 36.2142071],
+                        [-81.6803438, 36.2141517],
+                        [-81.6802281, 36.2141773],
+                        [-81.6802468, 36.2142336]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "253A",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6804153, 36.2142639],
+                        [-81.6804033, 36.2142292],
+                        [-81.6803559, 36.2142404],
+                        [-81.6803679, 36.2142748]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "253B",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6804033, 36.2142292],
+                        [-81.6803933, 36.2142003],
+                        [-81.6803458, 36.2142109],
+                        [-81.6803559, 36.2142404]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "253",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803679, 36.2142748],
+                        [-81.6803458, 36.2142109],
+                        [-81.6802991, 36.2142214],
+                        [-81.6803213, 36.2142856]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "255",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "privatelounge",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803213, 36.2142856],
+                        [-81.6803068, 36.2142432],
+                        [-81.6802814, 36.2142488],
+                        [-81.6802954, 36.2142917]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "257",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "office",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-2",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6802954, 36.2142917],
+                        [-81.6802814, 36.2142488],
+                        [-81.6802541, 36.2142549],
+                        [-81.680269, 36.2142979]
+                    ]
+                ]
+            }
+        },
+    ]
+}

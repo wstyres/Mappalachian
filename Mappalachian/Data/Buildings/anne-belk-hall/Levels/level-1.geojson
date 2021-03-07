@@ -1,0 +1,202 @@
+{
+    "type": "FeatureCollection",
+    "name": "unit",
+    "features": [
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair1Level1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-1",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803665, 36.2143589],
+                        [-81.6803396, 36.2142813],
+                        [-81.680269, 36.2142979],
+                        [-81.6802957, 36.2143752]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair2Level1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-1",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803239, 36.2144736],
+                        [-81.6803139, 36.2144456],
+                        [-81.6802452, 36.2144614],
+                        [-81.6802551, 36.2144892]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair3Level1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-1",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807703, 36.2143672],
+                        [-81.6807619, 36.2143433],
+                        [-81.6806892, 36.2143599],
+                        [-81.6806975, 36.2143839]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair4Level1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-1",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807111, 36.2140656],
+                        [-81.6806909, 36.2140092],
+                        [-81.6806533, 36.2140177],
+                        [-81.6806741, 36.2140746]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Stair5Level1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "stairs",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-1",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6801901, 36.2141859],
+                        [-81.6801802, 36.2141578],
+                        [-81.6800993, 36.2141761],
+                        [-81.6801095, 36.2142044]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Elevator1Floor1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "elevator",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-1",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6803994, 36.214451],
+                        [-81.6803912, 36.2144271],
+                        [-81.6803679, 36.2144323],
+                        [-81.6803764, 36.2144563]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "unit",
+            "id": "Elevator2Floor1",
+            "properties": {
+                "accessibility": null,
+                "alt_name": null,
+                "category": "elevator",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "level_id": "anne-belk-hall-level-1",
+                "name": null,
+                "restriction": null
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-81.6807145, 36.2145626],
+                        [-81.6807076, 36.2145434],
+                        [-81.6806734, 36.2145514],
+                        [-81.6806803, 36.2145703]
+                    ]
+                ]
+            }
+        },
+    ]
+}
