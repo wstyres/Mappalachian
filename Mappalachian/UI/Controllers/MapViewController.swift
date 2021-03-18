@@ -126,11 +126,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         var features = [FeatureStyle]()
         features.append(level)
         features += level.units
+        features += level.openings
         
         let overlays = features.flatMap({ $0.geometry }).compactMap({ $0 as? MKOverlay })
         building.renderedOverlays = overlays
         mapView.addOverlays(overlays)
-        
         
         if currentlyRenderedBuilding != nil && level != building.levels.last {
             var levelNames = building.levels.compactMap({ $0.properties?.shortName })

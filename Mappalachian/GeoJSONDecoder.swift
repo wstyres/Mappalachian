@@ -27,8 +27,12 @@ class GeoJSONDecoder {
                         for level in building.levels {
                             let filename = level.identifier.replacingOccurrences(of: building.identifier.appending("-"), with: "").appending(".geojson")
                             let levelPath = levelsDirectory.appendingPathComponent(filename)
+                            let openingsPath = levelsDirectory.appendingPathComponent("Openings").appendingPathComponent(filename)
                             if FileManager.default.fileExists(atPath: levelPath.path) {
                                 level.units = decodeFeatures(Unit.self, at: levelPath)
+                            }
+                            if FileManager.default.fileExists(atPath: openingsPath.path) {
+                                level.openings = decodeFeatures(Opening.self, at: openingsPath)
                             }
                         }
                         venue.buildings.append(building)

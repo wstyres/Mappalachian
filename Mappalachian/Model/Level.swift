@@ -18,6 +18,7 @@ class Level: Feature<Level.Properties> {
     }
     
     var units: [Unit] = []
+    var openings: [Opening] = []
 }
 
 extension Level: FeatureStyle {

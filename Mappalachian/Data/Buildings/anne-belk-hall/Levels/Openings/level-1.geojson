@@ -1,0 +1,256 @@
+{
+    "type": "FeatureCollection",
+    "name": "unit",
+    "features": [
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "Stair5Level1Entrance",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6801145, 36.2142182],
+                    [-81.6801121, 36.2142116]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "131Entrance1",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6801344, 36.2141017],
+                    [-81.6801169, 36.2141056]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "113ZEntrance",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6803296, 36.2139646],
+                    [-81.6803176, 36.2139673]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "Stair4Level1Entrance",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6807169, 36.2140824],
+                    [-81.6807134, 36.214072]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "106ZEntrance",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6808282, 36.2143466],
+                    [-81.6808251, 36.2143377]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "140ZEntrance",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6808805, 36.2143409],
+                    [-81.6808591, 36.2143459]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "143AEntrance",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6809773, 36.2145759],
+                    [-81.6809655, 36.2145785]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "143AEntrance",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6809773, 36.2145759],
+                    [-81.6809655, 36.2145785]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "131Entrance2",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "exterior",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6802663, 36.2144866],
+                    [-81.6802587, 36.2144884]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "feature_type": "opening",
+            "id": "131Entrance2Corridor",
+            "properties": {
+                "access_control": null,
+                "accessibility": null,
+                "alt_name": null,
+                "category": "wall",
+                "display_point": {
+                    "coordinates": [-81.7050517, 36.2231394],
+                    "type": "Point"
+                },
+                "door": null,
+                "level_id": "anne-belk-hall-level-1",
+                "name": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-81.6802551, 36.2144892],
+                    [-81.6802443, 36.2144591]
+                ]
+            }
+        },
+    ]
+}
