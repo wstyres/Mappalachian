@@ -31,6 +31,8 @@ extension Opening: FeatureStyle {
                 overlayRenderer.strokeColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.00)
             case .wall:
                 overlayRenderer.strokeColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.00)
+                overlayRenderer.lineWidth = 1.3
+                return
             }
         } else {
             overlayRenderer.strokeColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)

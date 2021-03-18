@@ -228,31 +228,6 @@
         },
         {
             "type": "Feature",
-            "feature_type": "opening",
-            "id": "143AWall143",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6807589, 36.2145497],
-                    [-81.6807428, 36.2145033]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
             "feature_type": "unit",
             "id": "143D",
             "properties": {
@@ -444,32 +419,6 @@
                         [-81.6807615, 36.2144992],
                         [-81.6807729, 36.2145302]
                     ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "143RWall142Z",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6809736, 36.2145526],
-                    [-81.680953, 36.2145574],
-                    [-81.6809609, 36.2145796]
                 ]
             }
         },
@@ -916,31 +865,6 @@
         {
             "type": "Feature",
             "feature_type": "opening",
-            "id": "106ZWall106C",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6808218, 36.2143284],
-                    [-81.680766, 36.2143413]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
             "id": "106ZWall193Z",
             "properties": {
                 "access_control": null,
@@ -1132,31 +1056,6 @@
                         [-81.6806423, 36.2141904],
                         [-81.68065, 36.2142112]
                     ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "110Wall",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6806137, 36.2141088],
-                    [-81.6806039, 36.214111]
                 ]
             }
         },
@@ -1526,31 +1425,6 @@
         },
         {
             "type": "Feature",
-            "feature_type": "opening",
-            "id": "112Wall112Z",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6805757, 36.2140324],
-                    [-81.680568, 36.2140104]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
             "feature_type": "unit",
             "id": "112N",
             "properties": {
@@ -1574,31 +1448,6 @@
                         [-81.6805241, 36.2139863],
                         [-81.680535, 36.2140179]
                     ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "116Wall",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.680473, 36.2139739],
-                    [-81.6804703, 36.2139659]
                 ]
             }
         },
@@ -2858,31 +2707,6 @@
         },
         {
             "type": "Feature",
-            "feature_type": "opening",
-            "id": "105Wall103",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6805115, 36.2143058],
-                    [-81.6805084, 36.2142971]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
             "feature_type": "unit",
             "id": "103",
             "properties": {
@@ -2998,257 +2822,6 @@
                         [-81.680342, 36.2141533],
                         [-81.680384, 36.2142712]
                     ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "141YWall136Z",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6807209, 36.2144403],
-                    [-81.6806923, 36.2144469]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "139ZWall100B",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6807209, 36.2144403],
-                    [-81.6806923, 36.2144469]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "139ZWall100B",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6806908, 36.2143592],
-                    [-81.6806636, 36.2143656]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "100BWall100C",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6806397, 36.2142137],
-                    [-81.6805977, 36.2142232]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "100DWall112Z",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6805892, 36.2140705],
-                    [-81.680513, 36.2140878],
-                    [-81.6805092, 36.2140769]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "130XWall100E",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.680384, 36.2142712],
-                    [-81.6803422, 36.2142806]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "130ZWall130X",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6804186, 36.2144025],
-                    [-81.6803881, 36.2144096]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "130ZWall130X",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6804186, 36.2144025],
-                    [-81.6803881, 36.2144096]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "136ZWall133Z",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6804357, 36.2144531],
-                    [-81.6804068, 36.2144599]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "opening",
-            "id": "138ZWall136Z",
-            "properties": {
-                "access_control": null,
-                "accessibility": null,
-                "alt_name": null,
-                "category": "wall",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "door": null,
-                "level_id": "anne-belk-hall-level-1",
-                "name": null
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [-81.6805537, 36.2144617],
-                    [-81.680535, 36.2144659]
                 ]
             }
         },
