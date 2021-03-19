@@ -16,6 +16,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     var venue: Venue?
     var currentLevelOrdinal: Int?
     var currentlyRenderedBuilding: Building?
+    var currentlyRenderedLevel: Level?
     var mapView: MKMapView!
     var levelPicker: LevelPickerView!
     var levelPickerHeightConstraint: NSLayoutConstraint!
@@ -117,6 +118,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         }
         
         currentLevelOrdinal = Int(level.properties?.ordinal ?? 0)
+        currentlyRenderedLevel = level
         
         if var overlays = building.renderedOverlays {
             mapView.removeOverlays(overlays)
@@ -124,6 +126,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         }
         
         var features = [FeatureStyle]()
+        if currentLevelOrdinal != building.levels.count - 1 && currentLevelOrdinal! > 0 { // If the level is not the roof
+            let lesserLevels = building.levels[0...currentLevelOrdinal! - 1]
+            for lesserLevel in lesserLevels {
+                features.append(lesserLevel) // Render levels below the current one
+            }
+        }
+        
         features.append(level)
         features += level.units
         features += level.openings
@@ -165,6 +174,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         }
         
         feature.configure(overlayRenderer: renderer)
+        if let level = feature as? Level {
+            if level.properties?.ordinal != currentLevelOrdinal {
+                renderer.fillColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1.0) // Renders levels visible below the current level as "closed", similar to the roof.
+            }
+        }
         
         return renderer
     }

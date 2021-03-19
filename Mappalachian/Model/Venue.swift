@@ -26,6 +26,13 @@ class Venue: Feature<Venue.Properties> {
                 } else if let opening = currentLevel.openings.first(where: { $0.geometry.contains(where: { $0 == shape }) }) {
                     return opening
                 }
+                
+                for i in 0...level {
+                    let lesserLevel = building.levels[i]
+                    if lesserLevel.geometry.contains(where: { $0 == shape } ) {
+                        return lesserLevel
+                    }
+                }
             }
         }
 
