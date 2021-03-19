@@ -618,36 +618,8 @@
                         [-81.6807162, 36.2145639],
                         [-81.680681, 36.2145722],
                         [-81.6806975, 36.2146177],
-                        [-81.6807349, 36.21461],
-                        [-81.6807416, 36.2146294]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "unit",
-            "id": "142Concrete",
-            "properties": {
-                "accessibility": null,
-                "alt_name": null,
-                "category": "concrete",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "level_id": "anne-belk-hall-level-1",
-                "name": null,
-                "restriction": null
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [-81.6807416, 36.2146294],
-                        [-81.6807349, 36.21461],
-                        [-81.6806975, 36.2146177],
-                        [-81.6807047, 36.2146376]
+                        [-81.6807256, 36.2146112],
+                        [-81.6807327, 36.2146315]
                     ]
                 ]
             }
