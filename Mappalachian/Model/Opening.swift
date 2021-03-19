@@ -17,8 +17,8 @@ class Opening: Feature<Opening.Properties> {
 
 extension Opening: FeatureStyle {
     private enum Category: String {
-        case exterior
-        case interior
+        case exterior = "door.exterior"
+        case interior = "door.interior"
         case wall
     }
     
@@ -28,7 +28,7 @@ extension Opening: FeatureStyle {
             case .exterior:
                 overlayRenderer.strokeColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)
             case .interior:
-                overlayRenderer.strokeColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.00)
+                overlayRenderer.strokeColor = UIColor.white
             case .wall:
                 overlayRenderer.strokeColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.00)
                 overlayRenderer.lineWidth = 1.3
