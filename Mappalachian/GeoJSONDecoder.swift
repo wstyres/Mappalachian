@@ -28,11 +28,18 @@ class GeoJSONDecoder {
                             let filename = level.identifier.replacingOccurrences(of: building.identifier.appending("-"), with: "").appending(".geojson")
                             let levelPath = levelsDirectory.appendingPathComponent(filename)
                             let openingsPath = levelsDirectory.appendingPathComponent("Openings").appendingPathComponent(filename)
+                            let amenitiesPath = levelsDirectory.appendingPathComponent("Amenities").appendingPathComponent(filename)
                             if FileManager.default.fileExists(atPath: levelPath.path) {
                                 level.units = decodeFeatures(Unit.self, at: levelPath)
                             }
                             if FileManager.default.fileExists(atPath: openingsPath.path) {
                                 level.openings = decodeFeatures(Opening.self, at: openingsPath)
+                            }
+                            if FileManager.default.fileExists(atPath: amenitiesPath.path) {
+                                level.amenities = decodeFeatures(Amenity.self, at: amenitiesPath)
+                                for amenity in level.amenities {
+                                    amenity.coordinate = amenity.geometry[0].coordinate
+                                }
                             }
                         }
                         venue.buildings.append(building)

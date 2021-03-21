@@ -27,6 +27,8 @@
 		899F51C425B4E141007E6908 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 899F51C325B4E141007E6908 /* Data */; };
 		899F51C925B4E310007E6908 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F51C825B4E310007E6908 /* Building.swift */; };
 		89AA607C255463B4001F97D1 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA607B255463B4001F97D1 /* Unit.swift */; };
+		89CCB21F260802DD0053122C /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CCB21E260802DD0053122C /* Amenity.swift */; };
+		89CCB227260805870053122C /* AmenityAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CCB226260805870053122C /* AmenityAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		899F51C325B4E141007E6908 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		899F51C825B4E310007E6908 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		89AA607B255463B4001F97D1 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		89CCB21E260802DD0053122C /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
+		89CCB226260805870053122C /* AmenityAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenityAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		890774B6254383D400326CBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				89CCB21E260802DD0053122C /* Amenity.swift */,
 				890774B7254383FB00326CBB /* Feature.swift */,
 				890774BF2543840A00326CBB /* Level.swift */,
 				890774C42543841A00326CBB /* Venue.swift */,
@@ -200,6 +205,7 @@
 			children = (
 				8962D56725C8D43800C4CB8F /* TextInputTableViewCell.swift */,
 				892E970C25E1B3CF00C5EF7E /* LevelPickerView.swift */,
+				89CCB226260805870053122C /* AmenityAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,10 +351,12 @@
 				890774B8254383FB00326CBB /* Feature.swift in Sources */,
 				8962D56825C8D43800C4CB8F /* TextInputTableViewCell.swift in Sources */,
 				8962D55725C7B1D400C4CB8F /* ScheduleViewController.swift in Sources */,
+				89CCB227260805870053122C /* AmenityAnnotationView.swift in Sources */,
 				899F51C925B4E310007E6908 /* Building.swift in Sources */,
 				8913A7D12603F87000FE7F85 /* Opening.swift in Sources */,
 				89403E88253F80EF006A9B90 /* SceneDelegate.swift in Sources */,
 				89403ED2253F8594006A9B90 /* MapViewController.swift in Sources */,
+				89CCB21F260802DD0053122C /* Amenity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,7 @@ class Feature<Properties: Decodable>: NSObject, GeoJSONDecodableFeature {
             do {
                 properties = try decoder.decode(Properties.self, from: propertiesData)
             } catch {
-                print("error decoding properties!")
+                print("error decoding properties! \(error)")
             }
         } else {
             print("Invalid data!")

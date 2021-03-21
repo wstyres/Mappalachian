@@ -16,4 +16,5 @@ class Building: Feature<Building.Properties> {
     
     var levels: [Level] = []
     var renderedOverlays: [MKOverlay]?
+    var renderedAnnotations: [MKAnnotation]?
 }

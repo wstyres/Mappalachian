@@ -125,6 +125,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             overlays.removeAll()
         }
         
+        if var annotations = building.renderedAnnotations {
+            mapView.removeAnnotations(annotations)
+            annotations.removeAll()
+        }
+        
         var features = [FeatureStyle]()
         if currentLevelOrdinal != building.levels.count - 1 && currentLevelOrdinal! > 0 { // If the level is not the roof
             let lesserLevels = building.levels[0...currentLevelOrdinal! - 1]
@@ -141,6 +146,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         building.renderedOverlays = overlays
         mapView.addOverlays(overlays)
         
+        let annotations = level.amenities
+        building.renderedAnnotations = annotations
+        mapView.addAnnotations(annotations)
+        
         if currentlyRenderedBuilding != nil && level != building.levels.last {
             var levelNames = building.levels.compactMap({ $0.properties?.shortName })
             levelNames.removeLast()
@@ -152,6 +161,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             levelPicker.levelNames = []
             levelPickerHeightConstraint.constant = 0.0
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let feature = annotation as? FeatureStyle {
+            let annotationView = AmenityAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
+            annotationView.image = UIImage(systemName: "arrow.up.arrow.down.circle")?.withTintColor(.white)
+            feature.configure(annotationView: annotationView)
+            return annotationView
+        }
+
+        return nil
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
