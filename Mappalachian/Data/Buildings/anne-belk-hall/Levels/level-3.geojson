@@ -349,7 +349,7 @@
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
-                "category": "conferenceroom",
+                "category": "conference",
                 "display_point": {
                     "coordinates": [-81.7050517, 36.2231394],
                     "type": "Point"
@@ -1109,7 +1109,7 @@
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
-                "category": "conferenceroom",
+                "category": "conference",
                 "display_point": {
                     "coordinates": [-81.7050517, 36.2231394],
                     "type": "Point"

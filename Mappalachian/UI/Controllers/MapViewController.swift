@@ -166,7 +166,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let feature = annotation as? FeatureStyle {
             let annotationView = AmenityAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
-            annotationView.image = UIImage(systemName: "arrow.up.arrow.down.circle")?.withTintColor(.white)
             feature.configure(annotationView: annotationView)
             return annotationView
         }

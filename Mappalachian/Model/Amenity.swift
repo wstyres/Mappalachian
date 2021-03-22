@@ -28,12 +28,17 @@ extension Amenity: FeatureStyle {
     }
     
     func configure(annotationView: MKAnnotationView) {
-        if let category = Category(rawValue: self.properties!.category) {
+        if let category = Category(rawValue: self.properties!.category), let amenityAnnotation = annotationView as? AmenityAnnotationView {
             switch category {
             case .restroom:
-                annotationView.backgroundColor = UIColor.systemPurple
-            case .elevator, .stairs:
-                annotationView.backgroundColor = UIColor.systemTeal
+                amenityAnnotation.backgroundColor = UIColor.systemPurple
+                amenityAnnotation.annotationImage = UIImage(systemName: "person.circle")
+            case .elevator:
+                amenityAnnotation.backgroundColor = UIColor.systemBlue
+                amenityAnnotation.annotationImage = UIImage(systemName: "arrow.up.arrow.down")
+            case .stairs:
+                amenityAnnotation.backgroundColor = UIColor.systemBlue
+                amenityAnnotation.annotationImage = UIImage(systemName: "arrow.up.forward")
             }
         } else {
             annotationView.backgroundColor = UIColor.systemGreen

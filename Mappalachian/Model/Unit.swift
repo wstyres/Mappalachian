@@ -30,6 +30,10 @@ extension Unit: FeatureStyle {
         case office
         case laboratory
         case privateLounge = "privatelounge"
+        case conference
+        case mechanical
+        case serverroom
+        case its
     }
     
     func configure(overlayRenderer: MKOverlayPathRenderer) {
@@ -46,13 +50,21 @@ extension Unit: FeatureStyle {
             case .nonpublic:
                 overlayRenderer.fillColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1.00)
             case .classroom:
-                overlayRenderer.fillColor = UIColor(red: 0.94, green: 0.89, blue: 0.82, alpha: 1.00)
+                overlayRenderer.fillColor = UIColor(red: 0.97, green: 0.96, blue: 0.91, alpha: 1.00)
             case .office:
                 overlayRenderer.fillColor = UIColor(red: 0.78, green: 0.92, blue: 0.79, alpha: 1.00)
             case .laboratory:
-                overlayRenderer.fillColor = UIColor(red: 0.91, green: 0.91, blue: 0.63, alpha: 1.00)
+                overlayRenderer.fillColor = UIColor(red: 0.93, green: 0.95, blue: 0.89, alpha: 1.00)
             case .privateLounge:
                 overlayRenderer.fillColor = UIColor(red: 1.00, green: 0.76, blue: 0.71, alpha: 1.00)
+            case .conference:
+                overlayRenderer.fillColor = UIColor(red: 0.68, green: 0.88, blue: 0.88, alpha: 1.00)
+            case .mechanical:
+                overlayRenderer.fillColor = UIColor(red: 0.83, green: 0.88, blue: 0.86, alpha: 1.00)
+            case .serverroom:
+                overlayRenderer.fillColor = UIColor(red: 0.92, green: 0.96, blue: 0.79, alpha: 1.00)
+            case .its:
+                overlayRenderer.fillColor = UIColor(red: 0.94, green: 0.78, blue: 0.90, alpha: 1.00)
             }
         } else {
             overlayRenderer.fillColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)

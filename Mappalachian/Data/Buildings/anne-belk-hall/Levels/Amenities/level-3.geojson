@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "name": "amenity",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "amenity",
+      "id": "Elevator1Floor3Point",
+      "properties": {
+        "accessibility": null,
+        "address_id": "anne-belk-hall-addr",
+        "alt_name": null,
+        "category": "elevator",
+        "correlation_id": null,
+        "hours": null,
+        "name": null,
+        "phone": null,
+        "units": ["Elevator1Floor3"],
+        "website": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.6803869, 36.2144431]
+      }
+    },
+  ]
+}
