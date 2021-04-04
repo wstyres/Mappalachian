@@ -260,24 +260,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         print("Focusing on \(building) \(room)")
         
         let building = venue?.buildings.first(where: { $0.identifier == building} )
-        var unit: Unit?
+        var foundUnit: Unit?
+        var foundLevel: Level?
         
         // This is a little strange but doing it any other way would assume too much about the layout of the building
         for level in building!.levels {
-            for levelUnit in level.units {
-                if levelUnit.identifier == room {
-                    unit = levelUnit
+            for unit in level.units {
+                if unit.identifier == room {
+                    foundUnit = unit
+                    foundLevel = level
                     break
                 }
             }
-            if unit != nil {
+            if foundUnit != nil && foundLevel != nil {
                 break
             }
         }
         
-        if unit != nil {
-            if let bounds = unit!.geometry[0] as? MKOverlay {
-                mapView.setVisibleMapRect(bounds.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: false)
+        if foundUnit != nil && foundLevel != nil {
+            if let bounds = foundUnit!.geometry[0] as? MKOverlay {
+                mapView.setVisibleMapRect(bounds.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: true)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                if foundLevel?.properties?.ordinal != self.currentLevelOrdinal {
+                    self.showFeaturesForLevel(building!, foundLevel!)
+                }
             }
         }
     }
