@@ -853,11 +853,11 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "308C",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
-                "category": "restroom",
+                "category": "office",
                 "display_point": {
                     "coordinates": [-81.7050517, 36.2231394],
                     "type": "Point"
@@ -881,7 +881,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "308B",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -909,7 +909,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "308A",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -937,7 +937,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "303",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -965,7 +965,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "Stair2Level3",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -993,7 +993,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "304",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1021,7 +1021,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "355B",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1049,11 +1049,11 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "302",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
-                "category": "restroom",
+                "category": "janitor",
                 "display_point": {
                     "coordinates": [-81.7050517, 36.2231394],
                     "type": "Point"
@@ -1077,7 +1077,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "355A",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1105,7 +1105,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "354",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1137,7 +1137,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "352A",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1165,7 +1165,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "353A",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1193,7 +1193,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "353B",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1221,7 +1221,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "353C",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1249,7 +1249,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "352",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1279,7 +1279,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "352B",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1309,7 +1309,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "352C",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1337,7 +1337,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "352F",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1365,7 +1365,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "352D",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1393,7 +1393,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "352E",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1421,7 +1421,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "SomeMoreConcrete",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
@@ -1449,7 +1449,7 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "6382938a-b59b-4631-b2ea-54ddd13562a3",
+            "id": "SomeConcrete",
             "properties": {
                 "accessibility": null,
                 "alt_name": null,
