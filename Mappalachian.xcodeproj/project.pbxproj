@@ -75,6 +75,7 @@
 		899F51C325B4E141007E6908 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		899F51C825B4E310007E6908 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		89AA607B255463B4001F97D1 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		89C95D50261A64A9000EB850 /* Mappalachian.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mappalachian.entitlements; sourceTree = "<group>"; };
 		89CCB21E260802DD0053122C /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
 		89CCB226260805870053122C /* AmenityAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenityAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +150,7 @@
 		89403E84253F80EF006A9B90 /* Mappalachian */ = {
 			isa = PBXGroup;
 			children = (
+				89C95D50261A64A9000EB850 /* Mappalachian.entitlements */,
 				89403E85253F80EF006A9B90 /* AppDelegate.swift */,
 				89403E87253F80EF006A9B90 /* SceneDelegate.swift */,
 				890774C9254384A100326CBB /* GeoJSONDecoder.swift */,
@@ -524,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Mappalachian/Mappalachian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FNYH7RRK6K;
 				INFOPLIST_FILE = Mappalachian/Info.plist;
@@ -533,6 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.willy.Mappalachian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -543,6 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Mappalachian/Mappalachian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FNYH7RRK6K;
 				INFOPLIST_FILE = Mappalachian/Info.plist;
@@ -552,6 +557,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.willy.Mappalachian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -61,7 +61,7 @@ struct Course: Codable {
     var instructors: [Instructor]?
     var meetingPatterns: [MeetingPattern]?
     var location: String?
-    var academicLevels: String?
+    var academicLevels: [String]?
     
     private enum CodingKeys: String, CodingKey {
         case identifier = "sectionId", title = "sectionTitle", isInstructor, name = "courseName", description = "courseDescription", section = "courseSectionNumber", firstMeetingDate, lastMeetingDate, credits, instructors, meetingPatterns, location, academicLevels
@@ -71,9 +71,9 @@ struct Course: Codable {
 struct Instructor: Codable {
     var firstName: String
     var lastName: String
-    var middleInitial: String
+    var middleInitial: String?
     var bannerID: String
-    var primary: Bool
+    var primary: String
     var formattedName: String
     
     private enum CodingKeys: String, CodingKey {
@@ -184,7 +184,7 @@ class UserManager: NSObject, URLSessionDelegate {
         if schedule != nil {
             completion(schedule, nil)
         } else {
-            let scheduleURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/courses/fullview/\(user.bannerID)")
+            let scheduleURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/courses/overview/\(user.bannerID)")
             let request = URLRequest(url: scheduleURL!)
             let task = authenticationSession!.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let httpResponse = response as? HTTPURLResponse {
@@ -193,9 +193,16 @@ class UserManager: NSObject, URLSessionDelegate {
                         completion(nil, error)
                         return
                     }
-                    
+                     
                     do {
                         self.schedule = try JSONDecoder().decode(Schedule.self, from: data!)
+                        
+                        for term in self.schedule!.terms {
+                            for var course in term.courses {
+                                course.term = term
+                            }
+                        }
+                        
                         completion(self.schedule, nil)
                     } catch {
                         print("unable to decode json \(error)")
@@ -206,6 +213,33 @@ class UserManager: NSObject, URLSessionDelegate {
             task.resume()
         }
     }
+    
+//    func fetchCourseInformation(for user: User, course: Course, completion: @escaping(Course?, Error?) -> Void) {
+//        let scheduleURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/courses/overview/\(user.bannerID)")
+//        var request = URLRequest(url: scheduleURL!)
+//        request.setValue(course.identifier, forHTTPHeaderField: "section")
+//
+//        let task = authenticationSession!.dataTask(with: request, completionHandler: { (data, response, error) in
+//            if let httpResponse = response as? HTTPURLResponse {
+//                guard httpResponse.statusCode != 401, error == nil else {
+//                    self.deleteLoginInformation() // Delete login information if the information was incorrect
+//                    completion(nil, error)
+//                    return
+//                }
+//
+//                do {
+//                    let filledSchedule = try JSONDecoder().decode(Schedule.self, from: data!)
+//                    let filledCourse = filledSchedule.terms.first?.courses.first
+//
+//                    completion(filledCourse, nil)
+//                } catch {
+//                    print("unable to decode json \(error)")
+//                    completion(nil, nil)
+//                }
+//            }
+//        })
+//        task.resume()
+//    }
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let credential = retrieveLoginInformation()

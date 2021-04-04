@@ -116,4 +116,8 @@ class ScheduleViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let course = schedule?.terms.first?.courses[indexPath.row]
+    }
+    
 }

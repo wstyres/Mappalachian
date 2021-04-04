@@ -61,7 +61,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         mapView.delegate = self
         mapView.showsCompass = false
         
+        #if targetEnvironment(macCatalyst)
+        let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath).appendingPathComponent("Contents/Resources/Data")
+        #else
         let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath).appendingPathComponent("Data")
+        #endif
         let geoJSONDecoder = GeoJSONDecoder()
         venue = geoJSONDecoder.decode(dataDirectory)
         
