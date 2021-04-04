@@ -276,7 +276,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         }
         
         if unit != nil {
-            print("\(unit!.identifier)")
+            if let bounds = unit!.geometry[0] as? MKOverlay {
+                mapView.setVisibleMapRect(bounds.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: false)
+            }
         }
     }
     
