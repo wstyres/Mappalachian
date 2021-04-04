@@ -197,12 +197,6 @@ class UserManager: NSObject, URLSessionDelegate {
                     do {
                         self.schedule = try JSONDecoder().decode(Schedule.self, from: data!)
                         
-                        for term in self.schedule!.terms {
-                            for var course in term.courses {
-                                course.term = term
-                            }
-                        }
-                        
                         completion(self.schedule, nil)
                     } catch {
                         print("unable to decode json \(error)")
