@@ -3,9 +3,9 @@
         {
             "feature_type": "building",
             "geometry": null,
-            "id": "anne-belk-hall",
+            "id": "BH",
             "properties": {
-                "address_id": "anne-belk-hall-addr",
+                "address_id": "BH-addr",
                 "alt_name": null,
                 "category": "unspecified",
                 "display_point": {

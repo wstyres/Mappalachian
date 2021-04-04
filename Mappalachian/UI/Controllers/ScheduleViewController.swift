@@ -117,7 +117,12 @@ class ScheduleViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let course = schedule?.terms.first?.courses[indexPath.row]
+        let meetingPattern = schedule?.terms.first?.courses[indexPath.row].meetingPatterns?.first
+        let mapNavController = self.tabBarController?.viewControllers?.first as? UINavigationController
+        let map = mapNavController?.viewControllers.first as? MapViewController
+        
+        self.tabBarController?.selectedIndex = 0
+        map?.focusOnRoom(room: meetingPattern!.room, in: meetingPattern!.buildingID)
     }
     
 }

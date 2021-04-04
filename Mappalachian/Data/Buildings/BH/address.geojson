@@ -3,7 +3,7 @@
         {
             "feature_type": "address",
             "geometry": null,
-            "id": "anne-belk-hall-addr",
+            "id": "BH-addr",
             "properties": {
                 "address": "224 Joyce Lawrence Lane",
                 "country": "US",

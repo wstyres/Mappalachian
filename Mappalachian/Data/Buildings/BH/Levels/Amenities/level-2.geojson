@@ -5,17 +5,17 @@
     {
       "type": "Feature",
       "feature_type": "amenity",
-      "id": "Elevator1Floor3Point",
+      "id": "Elevator1Floor2Point",
       "properties": {
         "accessibility": null,
-        "address_id": "anne-belk-hall-addr",
+        "address_id": "BH-addr",
         "alt_name": null,
         "category": "elevator",
         "correlation_id": null,
         "hours": null,
         "name": null,
         "phone": null,
-        "units": ["Elevator1Floor3"],
+        "units": ["Elevator1Floor2"],
         "website": null
       },
       "geometry": {

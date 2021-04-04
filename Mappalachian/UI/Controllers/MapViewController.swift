@@ -255,4 +255,29 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             self.title = venue?.properties?.name
         }
     }
+    
+    func focusOnRoom(room: String, in building: String) {
+        print("Focusing on \(building) \(room)")
+        
+        let building = venue?.buildings.first(where: { $0.identifier == building} )
+        var unit: Unit?
+        
+        // This is a little strange but doing it any other way would assume too much about the layout of the building
+        for level in building!.levels {
+            for levelUnit in level.units {
+                if levelUnit.identifier == room {
+                    unit = levelUnit
+                    break
+                }
+            }
+            if unit != nil {
+                break
+            }
+        }
+        
+        if unit != nil {
+            print("\(unit!.identifier)")
+        }
+    }
+    
 }

@@ -208,33 +208,6 @@ class UserManager: NSObject, URLSessionDelegate {
         }
     }
     
-//    func fetchCourseInformation(for user: User, course: Course, completion: @escaping(Course?, Error?) -> Void) {
-//        let scheduleURL = URL(string: "https://banmobprod.appstate.edu:8443/banner-mobileserver/api/2.0/courses/overview/\(user.bannerID)")
-//        var request = URLRequest(url: scheduleURL!)
-//        request.setValue(course.identifier, forHTTPHeaderField: "section")
-//
-//        let task = authenticationSession!.dataTask(with: request, completionHandler: { (data, response, error) in
-//            if let httpResponse = response as? HTTPURLResponse {
-//                guard httpResponse.statusCode != 401, error == nil else {
-//                    self.deleteLoginInformation() // Delete login information if the information was incorrect
-//                    completion(nil, error)
-//                    return
-//                }
-//
-//                do {
-//                    let filledSchedule = try JSONDecoder().decode(Schedule.self, from: data!)
-//                    let filledCourse = filledSchedule.terms.first?.courses.first
-//
-//                    completion(filledCourse, nil)
-//                } catch {
-//                    print("unable to decode json \(error)")
-//                    completion(nil, nil)
-//                }
-//            }
-//        })
-//        task.resume()
-//    }
-    
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let credential = retrieveLoginInformation()
         completionHandler(.useCredential, credential)

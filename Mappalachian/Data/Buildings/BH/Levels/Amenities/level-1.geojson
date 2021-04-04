@@ -8,7 +8,7 @@
       "id": "Elevator1Floor1Point",
       "properties": {
         "accessibility": null,
-        "address_id": "anne-belk-hall-addr",
+        "address_id": "BH-addr",
         "alt_name": null,
         "category": "elevator",
         "correlation_id": null,
@@ -29,7 +29,7 @@
       "id": "Elevator2Floor1Point",
       "properties": {
         "accessibility": null,
-        "address_id": "anne-belk-hall-addr",
+        "address_id": "BH-addr",
         "alt_name": null,
         "category": "elevator",
         "correlation_id": null,
@@ -50,7 +50,7 @@
       "id": "Stair1Floor1Point",
       "properties": {
         "accessibility": null,
-        "address_id": "anne-belk-hall-addr",
+        "address_id": "BH-addr",
         "alt_name": null,
         "category": "stairs",
         "correlation_id": null,
@@ -71,7 +71,7 @@
       "id": "Stair2Floor1Point",
       "properties": {
         "accessibility": null,
-        "address_id": "anne-belk-hall-addr",
+        "address_id": "BH-addr",
         "alt_name": null,
         "category": "stairs",
         "correlation_id": null,
@@ -92,7 +92,7 @@
       "id": "Stair3Floor1Point",
       "properties": {
         "accessibility": null,
-        "address_id": "anne-belk-hall-addr",
+        "address_id": "BH-addr",
         "alt_name": null,
         "category": "stairs",
         "correlation_id": null,
@@ -113,7 +113,7 @@
       "id": "Stair4Floor1Point",
       "properties": {
         "accessibility": null,
-        "address_id": "anne-belk-hall-addr",
+        "address_id": "BH-addr",
         "alt_name": null,
         "category": "stairs",
         "correlation_id": null,
@@ -134,7 +134,7 @@
       "id": "Stair5Floor1Point",
       "properties": {
         "accessibility": null,
-        "address_id": "anne-belk-hall-addr",
+        "address_id": "BH-addr",
         "alt_name": null,
         "category": "stairs",
         "correlation_id": null,

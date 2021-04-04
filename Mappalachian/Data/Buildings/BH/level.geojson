@@ -35,11 +35,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "anne-belk-hall-level-1",
+            "id": "BH-level-1",
             "properties": {
-                "address_id": "anne-belk-hall-addr",
+                "address_id": "BH-addr",
                 "building_ids": [
-                    "anne-belk-hall"
+                    "BH"
                 ],
                 "category": "unspecified",
                 "display_point": {
@@ -92,11 +92,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "anne-belk-hall-level-2",
+            "id": "BH-level-2",
             "properties": {
-                "address_id": "anne-belk-hall-addr",
+                "address_id": "BH-addr",
                 "building_ids": [
-                    "anne-belk-hall"
+                    "BH"
                 ],
                 "category": "unspecified",
                 "display_point": {
@@ -145,11 +145,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "anne-belk-hall-level-3",
+            "id": "BH-level-3",
             "properties": {
-                "address_id": "anne-belk-hall-addr",
+                "address_id": "BH-addr",
                 "building_ids": [
-                    "anne-belk-hall"
+                    "BH"
                 ],
                 "category": "unspecified",
                 "display_point": {
@@ -202,11 +202,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "anne-belk-hall-roof",
+            "id": "BH-roof",
             "properties": {
-                "address_id": "anne-belk-hall-addr",
+                "address_id": "BH-addr",
                 "building_ids": [
-                    "anne-belk-hall"
+                    "BH"
                 ],
                 "category": "unspecified",
                 "display_point": {
