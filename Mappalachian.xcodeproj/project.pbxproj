@@ -14,6 +14,7 @@
 		890774CA254384A100326CBB /* GeoJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890774C9254384A100326CBB /* GeoJSONDecoder.swift */; };
 		8913A7D12603F87000FE7F85 /* Opening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913A7D02603F87000FE7F85 /* Opening.swift */; };
 		891E011D262229E300BF6796 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891E011C262229E300BF6796 /* SearchViewController.swift */; };
+		891E011F26223F4600BF6796 /* Value1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891E011E26223F4600BF6796 /* Value1TableViewCell.swift */; };
 		892E970D25E1B3CF00C5EF7E /* LevelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E970C25E1B3CF00C5EF7E /* LevelPickerView.swift */; };
 		89403E86253F80EF006A9B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403E85253F80EF006A9B90 /* AppDelegate.swift */; };
 		89403E88253F80EF006A9B90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89403E87253F80EF006A9B90 /* SceneDelegate.swift */; };
@@ -57,6 +58,7 @@
 		890774C9254384A100326CBB /* GeoJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONDecoder.swift; sourceTree = "<group>"; };
 		8913A7D02603F87000FE7F85 /* Opening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opening.swift; sourceTree = "<group>"; };
 		891E011C262229E300BF6796 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		891E011E26223F4600BF6796 /* Value1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value1TableViewCell.swift; sourceTree = "<group>"; };
 		892E970C25E1B3CF00C5EF7E /* LevelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPickerView.swift; sourceTree = "<group>"; };
 		89403E82253F80EF006A9B90 /* Mappalachian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mappalachian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89403E85253F80EF006A9B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				8962D56725C8D43800C4CB8F /* TextInputTableViewCell.swift */,
 				892E970C25E1B3CF00C5EF7E /* LevelPickerView.swift */,
 				89CCB226260805870053122C /* AmenityAnnotationView.swift */,
+				891E011E26223F4600BF6796 /* Value1TableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				890774CA254384A100326CBB /* GeoJSONDecoder.swift in Sources */,
 				8962D55C25C8CC1600C4CB8F /* LogInViewController.swift in Sources */,
 				8903F66125CDE92400027705 /* UserManager.swift in Sources */,
+				891E011F26223F4600BF6796 /* Value1TableViewCell.swift in Sources */,
 				89AA607C255463B4001F97D1 /* Unit.swift in Sources */,
 				89403E86253F80EF006A9B90 /* AppDelegate.swift in Sources */,
 				890774C52543841A00326CBB /* Venue.swift in Sources */,

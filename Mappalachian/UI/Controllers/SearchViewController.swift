@@ -7,13 +7,13 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class SearchViewController: UITableViewController, UISearchResultsUpdating {
     
     var searchController = UISearchController()
     var empty = true
-    var results: [String]?
     var building: Building!
     var units: [Int: [Unit]] = [:]
+    var results: [Int: [Unit]] = [:]
     
     init(building: String) {
         super.init(style: .plain)
@@ -21,13 +21,12 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
         self.building = AppDelegate.delegate().venue.buildings.first(where: { $0.identifier == building })
         for level in self.building.levels {
             var units = level.units.filter({ unit in
-                return unit.properties!.category != "stairs" && unit.properties!.category != "concrete" && unit.properties!.category != "elevator" && unit.properties!.category != "wall"
+                return unit.properties!.category != "stairs" && unit.properties!.category != "concrete" && unit.properties!.category != "elevator" && unit.properties!.category != "wall" && unit.properties!.category != "nonpublic"
             })
             units.sort { unitA, unitB in
                 return unitA.identifier < unitB.identifier
             }
             self.units[level.properties!.ordinal] = units
-            
         }
         
         searchController.obscuresBackgroundDuringPresentation = false;
@@ -35,13 +34,11 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
         searchController.searchResultsUpdater = self;
         searchController.searchBar.placeholder = "Room Number";
         searchController.searchBar.autocapitalizationType = .none;
-//        searchController.searchBar.showsCancelButton = false;
-        searchController.searchBar.delegate = self
         searchController.searchBar.setImage(UIImage(systemName: "number"), for: .search, state: .normal)
         
         tableView.tableFooterView = UIView()
         tableView.tableHeaderView = UIView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "roomCell")
+        tableView.register(Value1TableViewCell.self, forCellReuseIdentifier: "roomCell")
     }
     
     required init?(coder: NSCoder) {
@@ -94,12 +91,18 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchTerm = searchController.searchBar.text {
-            
+            if !searchTerm.isEmpty {
+                empty = false
+                for level in building.levels {
+                    self.results[level.properties!.ordinal] = self.units[level.properties!.ordinal]?.filter({ unit in
+                        return unit.identifier.contains(searchTerm)
+                    })
+                }
+            } else {
+                empty = true
+            }
+            tableView.reloadData()
         }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -110,16 +113,20 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
         if empty {
             return self.units[section]!.count
         } else {
-            return results?.count ?? 0
+            return self.results[section]!.count
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath)
         if empty {
-            cell.textLabel?.text = self.units[indexPath.section]![indexPath.row].identifier
+            let unit = self.units[indexPath.section]![indexPath.row]
+            cell.textLabel?.text = unit.identifier
+            cell.detailTextLabel?.text = unit.properties!.category.capitalized
         } else {
-            
+            let unit = self.results[indexPath.section]![indexPath.row]
+            cell.textLabel?.text = unit.identifier
+            cell.detailTextLabel?.text = unit.properties!.category.capitalized
         }
         return cell
     }
