@@ -3,9 +3,9 @@
         {
             "feature_type": "building",
             "geometry": null,
-            "id": "smith-wright-hall",
+            "id": "SW",
             "properties": {
-                "address_id": "smith-wright-hall-addr",
+                "address_id": "SW-addr",
                 "alt_name": null,
                 "category": "unspecified",
                 "display_point": {

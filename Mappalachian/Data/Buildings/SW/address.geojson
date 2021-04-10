@@ -3,7 +3,7 @@
         {
             "feature_type": "address",
             "geometry": null,
-            "id": "smith-wright-hall-addr",
+            "id": "SW-addr",
             "properties": {
                 "address": "222 Joyce Lawrence Lane",
                 "country": "US",

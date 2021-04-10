@@ -21,11 +21,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "smith-wright-hall-level-3",
+            "id": "SW-level-3",
             "properties": {
-                "address_id": "smith-wright-hall-addr",
+                "address_id": "SW-addr",
                 "building_ids": [
-                    "smith-wright-hall"
+                    "SW"
                 ],
                 "category": "unspecified",
                 "display_point": {
@@ -63,11 +63,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "smith-wright-hall-level-3",
+            "id": "SW-level-3",
             "properties": {
-                "address_id": "smith-wright-hall-addr",
+                "address_id": "SW-addr",
                 "building_ids": [
-                    "smith-wright-hall"
+                    "SW"
                 ],
                 "category": "unspecified",
                 "display_point": {
@@ -105,11 +105,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "smith-wright-hall-level-3",
+            "id": "SW-level-3",
             "properties": {
-                "address_id": "smith-wright-hall-addr",
+                "address_id": "SW-addr",
                 "building_ids": [
-                    "smith-wright-hall"
+                    "SW"
                 ],
                 "category": "unspecified",
                 "display_point": {
@@ -147,11 +147,11 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "smith-wright-hall-roof",
+            "id": "SW-roof",
             "properties": {
-                "address_id": "smith-wright-hall-addr",
+                "address_id": "SW-addr",
                 "building_ids": [
-                    "smith-wright-hall"
+                    "SW"
                 ],
                 "category": "unspecified",
                 "display_point": {

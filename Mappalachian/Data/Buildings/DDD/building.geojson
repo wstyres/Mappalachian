@@ -29,9 +29,9 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "dd-dougherty-hall",
+            "id": "DDD",
             "properties": {
-                "address_id": "dd-dougherty-hall-addr",
+                "address_id": "DDD-addr",
                 "alt_name": null,
                 "category": "unspecified",
                 "display_point": {
