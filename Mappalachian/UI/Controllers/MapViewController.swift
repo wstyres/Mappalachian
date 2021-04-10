@@ -177,6 +177,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             return
         }
         
+        currentlyHighlightedUnit = nil
+        currentlyHighlightedOverlay = nil
+        
         currentLevelOrdinal = Int(level.properties?.ordinal ?? 0)
         currentlyRenderedLevel = level
         
@@ -217,10 +220,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             levelPicker.selectedLevel = level.properties?.ordinal
             
             levelPickerHeightConstraint.constant = CGFloat(levelPicker.levelNames.count * 50)
+            searchView.isHidden = false
+            
             self.secondaryTitle = "Floor \(level.properties!.ordinal + 1)"
         } else {
             levelPicker.levelNames = []
             levelPickerHeightConstraint.constant = 0.0
+            searchView.isHidden = true
         }
     }
     
@@ -328,10 +334,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         print("Focusing on \(building) \(room)")
         if let overlay = currentlyHighlightedOverlay {
             mapView.removeOverlay(overlay)
+            
+            currentlyHighlightedOverlay = nil
+            currentlyHighlightedUnit = nil
+            
+            mapView.addOverlay(overlay)
         }
-        
-        currentlyHighlightedOverlay = nil
-        currentlyHighlightedUnit = nil
         
         let building = venue?.buildings.first(where: { $0.identifier == building} )
         var foundUnit: Unit?

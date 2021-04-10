@@ -141,6 +141,9 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (searchController.isActive) {
+            searchController.dismiss(animated: true, completion: nil)
+        }
         goodbye()
         
         let room: String!
