@@ -95,14 +95,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         mapView.pointOfInterestFilter = .excludingAll
         mapView.delegate = self
         mapView.showsCompass = false
-        
-        #if targetEnvironment(macCatalyst)
-        let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath).appendingPathComponent("Contents/Resources/Data")
-        #else
-        let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath).appendingPathComponent("Data")
-        #endif
-        let geoJSONDecoder = GeoJSONDecoder()
-        venue = geoJSONDecoder.decode(dataDirectory)
+        venue = AppDelegate.delegate().venue
         
         if let venue = venue, let venueOverlay = venue.geometry[0] as? MKOverlay {
             mapView.setVisibleMapRect(venueOverlay.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: false)

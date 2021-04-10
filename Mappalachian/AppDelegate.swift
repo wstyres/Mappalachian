@@ -10,13 +10,21 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var venue: Venue!
 
     class func delegate() -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        #if targetEnvironment(macCatalyst)
+        let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath).appendingPathComponent("Contents/Resources/Data")
+        #else
+        let dataDirectory = URL(fileURLWithPath: Bundle.main.bundlePath).appendingPathComponent("Data")
+        #endif
+        let geoJSONDecoder = GeoJSONDecoder()
+        venue = geoJSONDecoder.decode(dataDirectory)
 
         return true
     }

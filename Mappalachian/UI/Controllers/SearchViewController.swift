@@ -11,14 +11,19 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
     
     var searchController = UISearchController()
     var empty = true
-    var recentSearches: [String]?
     var results: [String]?
-    var building: String!
+    var building: Building!
+    var units: [Int: [Unit]] = [:]
     
     init(building: String) {
         super.init(style: .plain)
         
-        self.building = building
+        self.building = AppDelegate.delegate().venue.buildings.first(where: { $0.identifier == building })
+        for level in self.building.levels {
+            self.units[level.properties!.ordinal] = level.units.filter({ unit in
+                return unit.properties!.category != "stairs" && unit.properties!.category != "concrete" && unit.properties!.category != "elevator" && unit.properties!.category != "wall"
+            })
+        }
         
         searchController.obscuresBackgroundDuringPresentation = false;
         searchController.hidesNavigationBarDuringPresentation = false;
@@ -31,6 +36,7 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
         
         tableView.tableFooterView = UIView()
         tableView.tableHeaderView = UIView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "roomCell")
     }
     
     required init?(coder: NSCoder) {
@@ -42,7 +48,7 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
 
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        self.title = building
+        self.title = building.properties!.name
     }
     
     private var _title: String?
@@ -85,20 +91,30 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return building.levels.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if empty {
-            return recentSearches?.count ?? 0
+            return self.units[section]!.count
         } else {
             return results?.count ?? 0
         }
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath)
+        if empty {
+            cell.textLabel?.text = self.units[indexPath.section]![indexPath.row].identifier
+        } else {
+            
+        }
+        return cell
+    }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if empty && recentSearches?.count != nil {
-            return "Recent Searches"
+        if self.tableView(tableView, numberOfRowsInSection: section) > 0 {
+            return "Floor \(building.levels[section].properties!.ordinal + 1)"
         }
         return nil
     }
