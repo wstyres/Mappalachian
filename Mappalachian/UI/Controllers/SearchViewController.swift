@@ -20,9 +20,14 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
         
         self.building = AppDelegate.delegate().venue.buildings.first(where: { $0.identifier == building })
         for level in self.building.levels {
-            self.units[level.properties!.ordinal] = level.units.filter({ unit in
+            var units = level.units.filter({ unit in
                 return unit.properties!.category != "stairs" && unit.properties!.category != "concrete" && unit.properties!.category != "elevator" && unit.properties!.category != "wall"
             })
+            units.sort { unitA, unitB in
+                return unitA.identifier < unitB.identifier
+            }
+            self.units[level.properties!.ordinal] = units
+            
         }
         
         searchController.obscuresBackgroundDuringPresentation = false;

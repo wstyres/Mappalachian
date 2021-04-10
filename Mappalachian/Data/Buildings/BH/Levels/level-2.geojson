@@ -347,38 +347,6 @@
         {
             "type": "Feature",
             "feature_type": "unit",
-            "id": "216A-1",
-            "properties": {
-                "accessibility": null,
-                "alt_name": null,
-                "category": "office",
-                "display_point": {
-                    "coordinates": [-81.7050517, 36.2231394],
-                    "type": "Point"
-                },
-                "level_id": "BH-level-2",
-                "name": null,
-                "restriction": null
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [-81.6807724, 36.2146225],
-                        [-81.6807556, 36.214576],
-                        [-81.6807223, 36.2145838],
-                        [-81.6807202, 36.2145785],
-                        [-81.6806861, 36.2145864],
-                        [-81.6806975, 36.2146177],
-                        [-81.6807256, 36.2146112],
-                        [-81.6807327, 36.2146315],
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "feature_type": "unit",
             "id": "216A",
             "properties": {
                 "accessibility": null,
