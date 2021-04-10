@@ -23,5 +23,131 @@
         "coordinates": [-81.6803869, 36.2144431]
       }
     },
+    {
+      "type": "Feature",
+      "feature_type": "amenity",
+      "id": "Elevator2Floor3Point",
+      "properties": {
+        "accessibility": null,
+        "address_id": "BH-addr",
+        "alt_name": null,
+        "category": "elevator",
+        "correlation_id": null,
+        "hours": null,
+        "name": null,
+        "phone": null,
+        "units": ["Elevator2Floor3"],
+        "website": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.6806952, 36.2145579]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "amenity",
+      "id": "Stair1Floor3Point",
+      "properties": {
+        "accessibility": null,
+        "address_id": "BH-addr",
+        "alt_name": null,
+        "category": "stairs",
+        "correlation_id": null,
+        "hours": null,
+        "name": null,
+        "phone": null,
+        "units": ["Stair1Floor3"],
+        "website": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.680318, 36.2143267]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "amenity",
+      "id": "Stair2Floor3Point",
+      "properties": {
+        "accessibility": null,
+        "address_id": "BH-addr",
+        "alt_name": null,
+        "category": "stairs",
+        "correlation_id": null,
+        "hours": null,
+        "name": null,
+        "phone": null,
+        "units": ["Stair2Floor3"],
+        "website": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.680292, 36.2144646]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "amenity",
+      "id": "Stair3Floor3Point",
+      "properties": {
+        "accessibility": null,
+        "address_id": "BH-addr",
+        "alt_name": null,
+        "category": "stairs",
+        "correlation_id": null,
+        "hours": null,
+        "name": null,
+        "phone": null,
+        "units": ["Stair3Floor3"],
+        "website": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.6807324, 36.2143617]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "amenity",
+      "id": "Stair4Floor3Point",
+      "properties": {
+        "accessibility": null,
+        "address_id": "BH-addr",
+        "alt_name": null,
+        "category": "stairs",
+        "correlation_id": null,
+        "hours": null,
+        "name": null,
+        "phone": null,
+        "units": ["Stair4Floor3"],
+        "website": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.680686, 36.214052]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "amenity",
+      "id": "Stair5Floor3Point",
+      "properties": {
+        "accessibility": null,
+        "address_id": "BH-addr",
+        "alt_name": null,
+        "category": "stairs",
+        "correlation_id": null,
+        "hours": null,
+        "name": null,
+        "phone": null,
+        "units": ["Stair5Floor3"],
+        "website": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.6801469, 36.2141892]
+      }
+    },
   ]
 }
