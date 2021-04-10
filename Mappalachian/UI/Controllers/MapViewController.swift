@@ -21,6 +21,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     var levelPicker: LevelPickerView!
     var levelPickerHeightConstraint: NSLayoutConstraint!
     var searchView: UIView!
+    var currentlyHighlightedOverlay: MKOverlay?
     
     override func loadView() {
         super.loadView()
@@ -226,7 +227,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         } else {
             levelPicker.levelNames = []
             levelPickerHeightConstraint.constant = 0.0
-//            self.secondaryTitle = nil
         }
     }
     
@@ -260,6 +260,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         }
         
         feature.configure(overlayRenderer: renderer)
+        if overlay.isEqual(currentlyHighlightedOverlay) {
+            renderer.strokeColor = .systemPink
+        }
         if let level = feature as? Level {
             if level.properties?.ordinal != currentLevelOrdinal {
                 renderer.fillColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1.0) // Renders levels visible below the current level as "closed", similar to the roof.
@@ -278,7 +281,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     }
     
     @objc func showSearch() {
-        
+        let search = SearchViewController(building: currentlyRenderedBuilding!.identifier)
+        let nav = UINavigationController(rootViewController: search)
+        self.present(nav, animated: true, completion: nil)
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
