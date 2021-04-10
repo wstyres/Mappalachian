@@ -21,6 +21,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     var levelPicker: LevelPickerView!
     var levelPickerHeightConstraint: NSLayoutConstraint!
     var searchView: UIView!
+    var currentlyHighlightedUnit: Unit?
     var currentlyHighlightedOverlay: MKOverlay?
     
     override func loadView() {
@@ -234,6 +235,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if (overlay.isEqual(currentlyHighlightedOverlay)) {
+            let renderer = MKPolygonRenderer(overlay: overlay)
+            currentlyHighlightedUnit?.configure(overlayRenderer: renderer)
+            renderer.strokeColor = .systemPink
+            renderer.lineWidth += 0.5
+            return renderer
+        }
+        
         guard let feature = venue?.featureForShape(overlay, on: currentLevelOrdinal!) else {
             return MKOverlayRenderer(overlay: overlay)
         }
@@ -253,9 +262,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         }
         
         feature.configure(overlayRenderer: renderer)
-        if overlay.isEqual(currentlyHighlightedOverlay) {
-            renderer.strokeColor = .systemPink
-        }
         if let level = feature as? Level {
             if level.properties?.ordinal != currentLevelOrdinal {
                 renderer.fillColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1.0) // Renders levels visible below the current level as "closed", similar to the roof.
@@ -320,6 +326,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     
     func focusOnRoom(room: String, in building: String) {
         print("Focusing on \(building) \(room)")
+        if let overlay = currentlyHighlightedOverlay {
+            mapView.removeOverlay(overlay)
+        }
+        
+        currentlyHighlightedOverlay = nil
+        currentlyHighlightedUnit = nil
         
         let building = venue?.buildings.first(where: { $0.identifier == building} )
         var foundUnit: Unit?
@@ -342,10 +354,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         if foundUnit != nil && foundLevel != nil {
             if let bounds = foundUnit!.geometry[0] as? MKOverlay {
                 mapView.setVisibleMapRect(bounds.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: true)
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                if foundLevel?.properties?.ordinal != self.currentLevelOrdinal {
-                    self.showFeaturesForLevel(building!, foundLevel!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    if foundLevel?.properties?.ordinal != self.currentLevelOrdinal {
+                        self.showFeaturesForLevel(building!, foundLevel!)
+                    }
+                    self.currentlyHighlightedUnit = foundUnit
+                    self.currentlyHighlightedOverlay = bounds
+                    self.mapView.addOverlay(self.currentlyHighlightedOverlay!)
                 }
             }
         }
