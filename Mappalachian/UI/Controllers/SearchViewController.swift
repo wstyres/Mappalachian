@@ -49,6 +49,13 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating, UISe
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         self.title = building.properties!.name
+        
+        let closeButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(goodbye))
+        navigationItem.rightBarButtonItem = closeButton
+    }
+    
+    @objc func goodbye() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     private var _title: String?
