@@ -20,6 +20,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     var mapView: MKMapView!
     var levelPicker: LevelPickerView!
     var levelPickerHeightConstraint: NSLayoutConstraint!
+    var searchView: UIView!
     
     override func loadView() {
         super.loadView()
@@ -49,6 +50,39 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         levelPickerHeightConstraint = levelPicker.heightAnchor.constraint(equalToConstant: CGFloat(50 * levelPicker.levelNames.count))
         levelPickerHeightConstraint.isActive = true
         levelPicker.translatesAutoresizingMaskIntoConstraints = false
+        
+        searchView = UIView()
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
+        searchView.addSubview(blurView)
+        mapView.addSubview(searchView)
+        NSLayoutConstraint.activate([
+            searchView.topAnchor.constraint(equalTo: levelPicker.bottomAnchor, constant: 8),
+            searchView.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -8),
+            searchView.heightAnchor.constraint(equalToConstant: 50),
+            searchView.widthAnchor.constraint(equalToConstant: 50),
+            blurView.topAnchor.constraint(equalTo: searchView.topAnchor),
+            blurView.bottomAnchor.constraint(equalTo: searchView.bottomAnchor),
+            blurView.leadingAnchor.constraint(equalTo: searchView.leadingAnchor),
+            blurView.trailingAnchor.constraint(equalTo: searchView.trailingAnchor),
+        ])
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        searchView.translatesAutoresizingMaskIntoConstraints = false
+        
+        blurView.layer.cornerRadius = 10
+        blurView.layer.masksToBounds = true
+        
+        searchView.layer.shadowColor = UIColor.black.cgColor
+        searchView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        searchView.layer.shadowOpacity = 0.4
+        searchView.layer.shadowRadius = 3.0
+        
+        let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let largeConfig = UIImage.SymbolConfiguration(scale: .large)
+        searchButton.setImage(UIImage(systemName: "magnifyingglass", withConfiguration: largeConfig), for: .normal)
+        searchButton.tintColor = UIColor.label
+        searchButton.addTarget(self, action: #selector(showSearch), for: .touchUpInside)
+        
+        blurView.contentView.addSubview(searchButton)
     }
     
     override func viewDidLoad() {
@@ -82,8 +116,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         
         if let name = venue?.properties?.name {
             self.title = name
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle.fill"), style: .plain, target: self, action: #selector(showInfo))
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.tertiaryLabel
         }
     }
     
@@ -113,6 +145,35 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         }
         get {
             return _title
+        }
+    }
+    
+    private var _secondaryTitle: String?
+    var secondaryTitle: String? {
+        set {
+            _secondaryTitle = newValue!
+            
+            if let titleLabel = navigationItem.rightBarButtonItem?.customView as? UILabel {
+                let animation = CATransition()
+                animation.duration = 0.25
+                animation.type = .fade
+                
+                titleLabel.layer.add(animation, forKey: "fadeText")
+                titleLabel.text = _secondaryTitle
+            } else {
+                let titleLabel = UILabel()
+                titleLabel.textColor = .secondaryLabel
+                titleLabel.text = _secondaryTitle
+                
+                let titleFont = UIFont.preferredFont(forTextStyle: .title3)
+                let largeTitleFont = UIFont(descriptor: titleFont.fontDescriptor.withSymbolicTraits(.traitBold)!, size: titleFont.pointSize)
+                titleLabel.font = largeTitleFont
+                
+                navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleLabel)
+            }
+        }
+        get {
+            return _secondaryTitle
         }
     }
     
@@ -161,9 +222,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             levelPicker.selectedLevel = level.properties?.ordinal
             
             levelPickerHeightConstraint.constant = CGFloat(levelPicker.levelNames.count * 50)
+            self.secondaryTitle = "Floor \(level.properties!.ordinal + 1)"
         } else {
             levelPicker.levelNames = []
             levelPickerHeightConstraint.constant = 0.0
+//            self.secondaryTitle = nil
         }
     }
     
@@ -214,7 +277,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         showFeaturesForLevel(currentlyRenderedBuilding!, (currentlyRenderedBuilding?.levels[ordinal])!)
     }
     
-    @objc func showInfo() {
+    @objc func showSearch() {
         
     }
     
@@ -253,6 +316,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
             currentlyRenderedBuilding = nil
             self.title = venue?.properties?.name
+            self.secondaryTitle = ""
         }
     }
     
