@@ -14,10 +14,12 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
     var building: Building!
     var units: [Int: [Unit]] = [:]
     var results: [Int: [Unit]] = [:]
+    weak var delegate: MapViewController?
     
-    init(building: String) {
+    init(building: String, delegate: MapViewController) {
         super.init(style: .plain)
         
+        self.delegate = delegate
         self.building = AppDelegate.delegate().venue.buildings.first(where: { $0.identifier == building })
         for level in self.building.levels {
             var units = level.units.filter({ unit in
@@ -136,6 +138,19 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
             return "Floor \(building.levels[section].properties!.ordinal + 1)"
         }
         return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goodbye()
+        
+        let room: String!
+        if empty {
+            room = self.units[indexPath.section]![indexPath.row].identifier
+        } else {
+            room = self.results[indexPath.section]![indexPath.row].identifier
+        }
+        
+        delegate?.focusOnRoom(room: room, in: building.identifier)
     }
 
 }

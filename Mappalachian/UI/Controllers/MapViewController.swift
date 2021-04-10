@@ -274,7 +274,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
     }
     
     @objc func showSearch() {
-        let search = SearchViewController(building: currentlyRenderedBuilding!.identifier)
+        let search = SearchViewController(building: currentlyRenderedBuilding!.identifier, delegate: self)
         let nav = UINavigationController(rootViewController: search)
         self.present(nav, animated: true, completion: nil)
     }
