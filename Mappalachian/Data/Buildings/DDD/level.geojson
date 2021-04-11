@@ -33,7 +33,7 @@
             "properties": {
                 "address_id": "DDD-addr",
                 "building_ids": [
-                    "dd-doughtery-hall"
+                    "DDD"
                 ],
                 "category": "unspecified",
                 "display_point": {
@@ -79,7 +79,7 @@
                 ],
                 "type": "Polygon"
             },
-            "id": "DDD-level-3",
+            "id": "DDD-level-2",
             "properties": {
                 "address_id": "DDD-addr",
                 "building_ids": [

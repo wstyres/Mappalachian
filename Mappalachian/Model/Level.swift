@@ -13,6 +13,7 @@ class Level: Feature<Level.Properties> {
         let ordinal: Int
         let category: String
         let shortName: String
+        let name: [String: String]?
         let outdoor: Bool
         let buildingIds: [String]?
     }

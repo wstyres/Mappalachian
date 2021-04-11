@@ -126,6 +126,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
                 
                 titleLabel.layer.add(animation, forKey: "fadeText")
                 titleLabel.text = _title
+                titleLabel.sizeToFit()
             } else {
                 let titleLabel = UILabel()
                 titleLabel.textColor = .label
@@ -155,12 +156,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
                 
                 titleLabel.layer.add(animation, forKey: "fadeText")
                 titleLabel.text = _secondaryTitle
+                titleLabel.sizeToFit()
             } else {
                 let titleLabel = UILabel()
                 titleLabel.textColor = .secondaryLabel
                 titleLabel.text = _secondaryTitle
                 
-                let titleFont = UIFont.preferredFont(forTextStyle: .title3)
+                let titleFont = UIFont.preferredFont(forTextStyle: .title2)
                 let largeTitleFont = UIFont(descriptor: titleFont.fontDescriptor.withSymbolicTraits(.traitBold)!, size: titleFont.pointSize)
                 titleLabel.font = largeTitleFont
                 
@@ -222,7 +224,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
             levelPickerHeightConstraint.constant = CGFloat(levelPicker.levelNames.count * 50)
             searchView.isHidden = false
             
-            self.secondaryTitle = "Floor \(level.properties!.ordinal + 1)"
+            self.secondaryTitle = level.properties!.name!["en"]
         } else {
             levelPicker.levelNames = []
             levelPickerHeightConstraint.constant = 0.0
@@ -325,8 +327,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, LevelPickerDelegat
         if currentlyRenderedBuilding != nil {
             showFeaturesForLevel(currentlyRenderedBuilding!, currentlyRenderedBuilding!.levels.last!)
             currentlyRenderedBuilding = nil
-            self.title = venue?.properties?.name
             self.secondaryTitle = ""
+            self.title = venue?.properties?.name
         }
     }
     

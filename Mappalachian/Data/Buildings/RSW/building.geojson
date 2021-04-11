@@ -1,0 +1,33 @@
+{
+    "features": [
+        {
+            "feature_type": "building",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-81.6819106, 36.2142358],
+                        [-81.6817422, 36.213795],
+                        [-81.6813739, 36.2138858],
+                        [-81.6815367, 36.2143281]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "RSW",
+            "properties": {
+                "address_id": "RSW-addr",
+                "alt_name": null,
+                "category": "unspecified",
+                "display_point": {
+                    "coordinates": [-81.680471, 36.214277],
+                    "type": "Point"
+                },
+                "name": "Rankin Science West",
+                "restriction": null
+            },
+            "type": "Feature"
+        }
+    ],
+    "name": "building",
+    "type": "FeatureCollection"
+}
